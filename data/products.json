@@ -1,0 +1,52 @@
+[
+  {
+    "id": "rodeo_tee",
+    "title": "Ain't My First Rodeo Vintage Tee",
+    "description": "Ultra-soft vintage washed ringspun cotton tee with faded retro rodeo lettering and signature wildflower collar stamp. Relaxed country fit.",
+    "images": [
+      "/images/shot_02_tailgate_lipsync_front.jpg"
+    ],
+    "variants": [
+      { "id": 101, "title": "Small / Faded Sand", "price": 3400 },
+      { "id": 102, "title": "Medium / Faded Sand", "price": 3400 },
+      { "id": 103, "title": "Large / Faded Sand", "price": 3400 },
+      { "id": 104, "title": "XL / Faded Sand", "price": 3400 }
+    ]
+  },
+  {
+    "id": "campfire_hoodie",
+    "title": "All Buckle No Belt Campfire Hoodie",
+    "description": "10oz heavyweight fleece hoodie in dusty midnight navy with double-layered hood and front pouch pocket. Built for Tennessee nights on the tailgate.",
+    "images": [
+      "/images/shot_01_tailgate_wide.jpg"
+    ],
+    "variants": [
+      { "id": 201, "title": "Small / Dusty Navy", "price": 5800 },
+      { "id": 202, "title": "Medium / Dusty Navy", "price": 5800 },
+      { "id": 203, "title": "Large / Dusty Navy", "price": 5800 },
+      { "id": 204, "title": "XL / Dusty Navy", "price": 5800 }
+    ]
+  },
+  {
+    "id": "tour_poster",
+    "title": "The Tailgate Sweetheart Tour Poster",
+    "description": "18\" x 24\" archival museum-grade matte giclée art print of Wren on the lowered tailgate of her '78 Ford truck at golden hour.",
+    "images": [
+      "/images/shot_03_tailgate_side_laugh.jpg"
+    ],
+    "variants": [
+      { "id": 301, "title": "Standard 18\" x 24\" Matte", "price": 2400 }
+    ]
+  },
+  {
+    "id": "camp_mug",
+    "title": "Wildflower Enamel Camp Mug",
+    "description": "12oz speckled campfire enamel mug with durable steel rim and Wren's signature botanical wildflower motif.",
+    "images": [
+      "/images/wren_wildflower_tattoo.jpg"
+    ],
+    "variants": [
+      { "id": 401, "title": "One Size (12oz Speckled Cream)", "price": 1800 }
+    ]
+  }
+]
