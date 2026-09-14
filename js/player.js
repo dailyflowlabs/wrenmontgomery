@@ -156,7 +156,6 @@
   const prevTrackBtn = document.getElementById('prevTrackBtn');
   const nextTrackBtn = document.getElementById('nextTrackBtn');
   const loopTrackBtn = document.getElementById('loopTrackBtn');
-  const tubeWarmthBtn = document.getElementById('tubeWarmthBtn');
   const openLyricsBtn = document.getElementById('openLyricsBtn');
   const closeLyricsDrawerBtn = document.getElementById('closeLyricsDrawerBtn');
   const lyricsDrawer = document.getElementById('lyricsDrawer');
@@ -580,16 +579,7 @@
     });
   }
 
-  // 12AX7 Tube Preamp Warmth Switch
-  if (tubeWarmthBtn) {
-    tubeWarmthBtn.addEventListener('click', () => {
-      isWarmthOn = !isWarmthOn;
-      tubeWarmthBtn.classList.toggle('active', isWarmthOn);
-      if (warmthFilter && audioCtx) {
-        warmthFilter.gain.setTargetAtTime(isWarmthOn ? 3.5 : 0, audioCtx.currentTime, 0.05);
-      }
-    });
-  }
+
 
   // Songwriter's Journal / Lyric Sheet Drawer
   function toggleLyricDrawer() {

@@ -1,27 +1,50 @@
 [
   {
-    "id": "6aa744ba7f746fb4ed0e67f9",
-    "title": "Wren Montgomery - Sweet Tea & Gasoline Ceramic Camp Mug (11oz)",
-    "description": "High gloss 11oz ceramic mug featuring Wren Montgomery's official debut album and botanical wildflower motif.",
+    "id": "6aa74b60116285b2a903a3e5",
+    "title": "Wren Montgomery - Sweet Tea & Gasoline Canvas Tote Bag",
+    "description": "Official Wren Montgomery heavy-duty 100% cotton canvas tote bag. Features custom hand-drawn country acoustic guitar, wildflowers, and Nashville vintage screenprint artwork. Reinforced handles for everyday carry.",
     "tags": [
-      "Home & Living",
-      "Mugs",
-      "Sublimation",
-      "White base",
-      "11 oz",
-      "11oz",
-      "Kitchen",
+      "Bags",
+      "Cotton",
+      "DTG",
+      "Totes",
+      "Accessories",
+      "Seasonal Picks",
       "TikTok",
-      "Personalization Picks"
+      "Holiday Picks",
+      "Spring Essentials",
+      "Bestsellers",
+      "Summer Hats & Bags"
     ],
     "options": [
       {
-        "name": "Mug sizes",
+        "name": "Colors",
+        "type": "color",
+        "values": [
+          {
+            "id": 4353,
+            "title": "Natural",
+            "colors": [
+              "#e0d2c5"
+            ]
+          },
+          {
+            "id": 4354,
+            "title": "Black",
+            "colors": [
+              "#2a2627"
+            ]
+          }
+        ],
+        "display_in_preview": true
+      },
+      {
+        "name": "Size",
         "type": "size",
         "values": [
           {
-            "id": 1189,
-            "title": "11oz"
+            "id": 3636,
+            "title": "15\" x 16\""
           }
         ],
         "display_in_preview": false
@@ -29,28 +52,46 @@
     ],
     "variants": [
       {
-        "id": 33719,
-        "sku": "11661501949907277436",
-        "cost": 644,
-        "price": 1600,
-        "title": "11oz",
-        "grams": 460,
+        "id": 101409,
+        "sku": "11599818053414929564",
+        "cost": 967,
+        "price": 2200,
+        "title": "Natural / 15\" x 16\"",
+        "grams": 140,
         "is_enabled": true,
         "is_default": true,
         "is_available": true,
         "is_printify_express_eligible": false,
         "options": [
-          1189
+          4353,
+          3636
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 103598,
+        "sku": "25372374680109955933",
+        "cost": 967,
+        "price": 2200,
+        "title": "Black / 15\" x 16\"",
+        "grams": 140,
+        "is_enabled": true,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          4354,
+          3636
         ],
         "quantity": 1
       }
     ],
     "images": [
       {
-        "mockup_id": "6aa744ba7f746fb4ed0e67f9_33719_6400_front",
-        "src": "https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/6400/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=front",
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_93895_front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/93895/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=front",
         "variant_ids": [
-          33719
+          101409
         ],
         "position": "front",
         "is_default": true,
@@ -58,99 +99,395 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744ba7f746fb4ed0e67f9_33719_6402_left",
-        "src": "https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/6402/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=left",
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_93896_back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/93896/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=back",
         "variant_ids": [
-          33719
+          101409
         ],
-        "position": "front",
+        "position": "back",
         "is_default": false,
         "is_selected_for_publishing": true,
         "order": null
       },
       {
-        "mockup_id": "6aa744ba7f746fb4ed0e67f9_33719_10395_right",
-        "src": "https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/10395/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=right",
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_94286_person-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/94286/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-front",
         "variant_ids": [
-          33719
+          101409
         ],
-        "position": "front",
+        "position": "other",
         "is_default": false,
         "is_selected_for_publishing": true,
         "order": null
       },
       {
-        "mockup_id": "6aa744ba7f746fb4ed0e67f9_33719_10393_context-1",
-        "src": "https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/10393/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=context-1",
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_94287_person-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/94287/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-back",
         "variant_ids": [
-          33719
+          101409
         ],
-        "position": "front",
+        "position": "other",
         "is_default": false,
         "is_selected_for_publishing": true,
         "order": null
       },
       {
-        "mockup_id": "6aa744ba7f746fb4ed0e67f9_33719_10394_context-2",
-        "src": "https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/10394/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=context-2",
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109937_person-2-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109937/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-2-front",
         "variant_ids": [
-          33719
+          101409
         ],
-        "position": "front",
+        "position": "other",
         "is_default": false,
         "is_selected_for_publishing": true,
         "order": null
       },
       {
-        "mockup_id": "6aa744ba7f746fb4ed0e67f9_33719_6568_context-3",
-        "src": "https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/6568/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=context-3",
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109948_person-2-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109948/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-2-back",
         "variant_ids": [
-          33719
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109938_person-3-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109938/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-3-front",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109946_person-3-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109946/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-3-back",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109939_person-4-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109939/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-4-front",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109949_person-4-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109949/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-4-back",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_94288_context-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/94288/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=context-front",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_94289_context-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/94289/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=context-back",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109940_lifestyle-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109940/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=lifestyle-front",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_109947_lifestyle-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/109947/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=lifestyle-back",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_94290_closeup-1",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/94290/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=closeup-1",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_101409_94538_closeup-2",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/101409/94538/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=closeup-2",
+        "variant_ids": [
+          101409
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_93895_front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/93895/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=front",
+        "variant_ids": [
+          103598
         ],
         "position": "front",
+        "is_default": true,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_93896_back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/93896/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "back",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_94286_person-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/94286/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-front",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_94287_person-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/94287/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109937_person-2-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109937/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-2-front",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109948_person-2-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109948/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-2-back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109938_person-3-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109938/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-3-front",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109946_person-3-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109946/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-3-back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109939_person-4-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109939/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-4-front",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109949_person-4-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109949/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=person-4-back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_94288_context-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/94288/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=context-front",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_94289_context-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/94289/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=context-back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109940_lifestyle-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109940/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=lifestyle-front",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_109947_lifestyle-back",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/109947/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=lifestyle-back",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_94290_closeup-1",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/94290/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=closeup-1",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b60116285b2a903a3e5_103598_94538_closeup-2",
+        "src": "https://images-api.printify.com/mockup/6aa74b60116285b2a903a3e5/103598/94538/wren-montgomery-sweet-tea-gasoline-canvas-tote-bag.jpg?camera_label=closeup-2",
+        "variant_ids": [
+          103598
+        ],
+        "position": "other",
         "is_default": false,
         "is_selected_for_publishing": true,
         "order": null
       }
     ],
-    "created_at": "2026-09-14 00:50:02+00:00",
-    "updated_at": "2026-09-14 00:50:03+00:00",
+    "created_at": "2026-09-14 01:18:24+00:00",
+    "updated_at": "2026-09-14 01:18:25+00:00",
     "visible": true,
-    "is_locked": true,
-    "blueprint_id": 68,
+    "is_locked": false,
+    "external": {
+      "id": "6aa74b60116285b2a903a3e5",
+      "handle": "https://wrenmontgomery.com/merch#6aa74b60116285b2a903a3e5",
+      "type": 6
+    },
+    "blueprint_id": 1313,
     "user_id": 28198904,
     "shop_id": 28933843,
-    "print_provider_id": 1,
+    "print_provider_id": 99,
     "print_areas": [
       {
         "variant_ids": [
-          33719
+          101409,
+          103598
         ],
         "placeholders": [
           {
             "position": "front",
             "images": [
               {
-                "id": "6aa744a058fa6ab38c44ebab",
-                "name": "wren_sweet_tea_and_gasoline_album.jpg",
+                "id": "6aa74b5d6e59eb6a50875e91",
+                "name": "canvas_tote_graphic.jpg",
                 "type": "image/jpeg",
-                "height": 3000,
-                "width": 3000,
+                "height": 1200,
+                "width": 896,
                 "x": 0.5,
                 "y": 0.5,
                 "flipX": false,
                 "flipY": false,
-                "scale": 1,
+                "scale": 0.9,
                 "angle": 0,
-                "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28198904/1f4c815c-5b3a-480d-a368-381357e654be",
+                "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28198904/52f54e18-d737-4f04-a8e2-f63a9f6c7095",
                 "layerType": "image",
-                "imageId": "6aa744a058fa6ab38c44ebab_b019b15c-b097-b5d9-b85b-6adc4e2d64f6"
+                "imageId": "6aa74b5d6e59eb6a50875e91_1d28cd02-711a-e327-7b84-18902f2ce69d"
               }
             ],
-            "decoration_method": "dye-sublimation"
+            "decoration_method": "dtg"
+          },
+          {
+            "position": "back",
+            "images": [],
+            "decoration_method": "dtg"
           }
-        ],
-        "background": "#ffffff"
+        ]
       }
     ],
     "print_details": [],
@@ -163,14 +500,27 @@
     "original_product_id": "",
     "views": [
       {
-        "id": 1118,
-        "label": "Wraparound exterior",
+        "id": 115220,
+        "label": "Front side",
         "position": "front",
         "files": [
           {
-            "src": "https://images.printify.com/api/catalog/68d5011d9789049f5d0236b2.svg",
+            "src": "https://images.printify.com/api/catalog/646c7fe56b1930d8650a0df2.svg",
             "variant_ids": [
-              33719
+              101409
+            ]
+          }
+        ]
+      },
+      {
+        "id": 115123,
+        "label": "Back side",
+        "position": "back",
+        "files": [
+          {
+            "src": "https://images.printify.com/api/catalog/646c7fef6b1930d8650a0df8.svg",
+            "variant_ids": [
+              101409
             ]
           }
         ]
@@ -178,1026 +528,377 @@
     ]
   },
   {
-    "id": "6aa744b720a2bb2c3504c021",
-    "title": "Wren Montgomery - Sweet Tea & Gasoline Tour Poster",
-    "description": "18\" x 24\" archival museum-grade matte giclée fine art print of the official Sweet Tea & Gasoline debut album artwork.",
+    "id": "6aa74b5edb4805d0e3070f57",
+    "title": "Wren Montgomery - Sweet Tea & Gasoline Foam Trucker Hat",
+    "description": "Official Wren Montgomery retro foam trucker hat with vintage rodeo bucking bronco patch embroidery-style graphic. Breathable mesh back, curved bill, and adjustable snapback closure. Leiper's Fork, TN edition.",
     "tags": [
-      "Home & Living",
-      "Matte",
-      "Indoor",
-      "Paper",
-      "Posters",
-      "Made in USA",
-      "Made in the USA",
-      "Assembled in USA",
-      "Assembled in the USA",
+      "Embroidery",
+      "Hats",
+      "Accessories",
+      "DTF",
       "Bestsellers"
     ],
     "options": [
       {
-        "name": "Sizes",
+        "name": "Hat sizes",
         "type": "size",
         "values": [
           {
-            "id": 5375,
-            "title": "10\" x 8\""
-          },
-          {
-            "id": 2206,
-            "title": "11\" x 9\""
-          },
-          {
-            "id": 2873,
-            "title": "12\" x 8\""
-          },
-          {
-            "id": 4426,
-            "title": "13\" x 10\""
-          },
-          {
-            "id": 1073,
-            "title": "14″ x 11″"
-          },
-          {
-            "id": 4430,
-            "title": "16\" x 11\""
-          },
-          {
-            "id": 4433,
-            "title": "16\" x 12\""
-          },
-          {
-            "id": 4427,
-            "title": "17\" x 10\""
-          },
-          {
-            "id": 4431,
-            "title": "17\" x 11\""
-          },
-          {
-            "id": 1084,
-            "title": "18″ x 12″"
-          },
-          {
-            "id": 4436,
-            "title": "18\" x 14\""
-          },
-          {
-            "id": 4435,
-            "title": "19\" x 13\""
-          },
-          {
-            "id": 5368,
-            "title": "20\" x 8\""
-          },
-          {
-            "id": 4428,
-            "title": "20\" x 10\""
-          },
-          {
-            "id": 1086,
-            "title": "20″ x 16″"
-          },
-          {
-            "id": 4441,
-            "title": "20\" x 17\""
-          },
-          {
-            "id": 4432,
-            "title": "22\" x 11\""
-          },
-          {
-            "id": 4437,
-            "title": "23\" x 14\""
-          },
-          {
-            "id": 5370,
-            "title": "24\" x 10\""
-          },
-          {
-            "id": 4440,
-            "title": "24\" x 16\""
-          },
-          {
-            "id": 1088,
-            "title": "24″ x 18″"
-          },
-          {
-            "id": 4444,
-            "title": "24\" x 20\""
-          },
-          {
-            "id": 4445,
-            "title": "28\" x 20\""
-          },
-          {
-            "id": 4447,
-            "title": "28\" x 22\""
-          },
-          {
-            "id": 4438,
-            "title": "30\" x 15\""
-          },
-          {
-            "id": 1075,
-            "title": "30″ x 20″"
-          },
-          {
-            "id": 4448,
-            "title": "30\" x 22\""
-          },
-          {
-            "id": 2874,
-            "title": "32\" x 24\""
-          },
-          {
-            "id": 4449,
-            "title": "34\" x 22\""
-          },
-          {
-            "id": 1090,
-            "title": "36″ x 24″"
-          },
-          {
-            "id": 4446,
-            "title": "40\" x 20\""
-          },
-          {
-            "id": 4451,
-            "title": "40\" x 27\""
-          },
-          {
-            "id": 5373,
-            "title": "40\" x 28\""
-          },
-          {
-            "id": 4452,
-            "title": "40\" x 30\""
-          },
-          {
-            "id": 4450,
-            "title": "48\" x 24\""
-          },
-          {
-            "id": 4453,
-            "title": "48\" x 36\""
-          },
-          {
-            "id": 4454,
-            "title": "54\" x 36\""
-          },
-          {
-            "id": 1197,
-            "title": "10″ x 10″"
-          },
-          {
-            "id": 4393,
-            "title": "12\" x 12\""
-          },
-          {
-            "id": 1232,
-            "title": "14\" x 14\""
-          },
-          {
-            "id": 4439,
-            "title": "16\" x 16\""
-          },
-          {
-            "id": 4399,
-            "title": "18\" x 18\""
-          },
-          {
-            "id": 4443,
-            "title": "20\" x 20\""
-          },
-          {
-            "id": 4405,
-            "title": "23\" x 23\""
-          },
-          {
-            "id": 4406,
-            "title": "24\" x 24\""
-          },
-          {
-            "id": 3898,
-            "title": "28\" x 28\""
-          }
-        ],
-        "display_in_preview": true
-      },
-      {
-        "name": "Paper types",
-        "type": "paper",
-        "values": [
-          {
-            "id": 1932,
-            "title": "Matte"
+            "id": 2104,
+            "title": "One size"
           }
         ],
         "display_in_preview": false
+      },
+      {
+        "name": "Otto Colors",
+        "type": "color",
+        "values": [
+          {
+            "id": 3739,
+            "title": "Black",
+            "colors": [
+              "#1a1616"
+            ]
+          },
+          {
+            "id": 4688,
+            "title": "Dark Navy",
+            "colors": [
+              "#363651"
+            ]
+          },
+          {
+            "id": 5640,
+            "title": "Black/White",
+            "colors": [
+              "#1a1616",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 5642,
+            "title": "Blue/White",
+            "colors": [
+              "#0aace3",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 14965,
+            "title": "Dark Green / White / Dark Green",
+            "colors": [
+              "#334c3d",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 12711,
+            "title": "Hot Pink/ White/ Hot Pink",
+            "colors": [
+              "#c94f97",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 12712,
+            "title": "Kelly/ White/ Kelly",
+            "colors": [
+              "#018b3b",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 5641,
+            "title": "Light Pink/White",
+            "colors": [
+              "#fedae1",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 14964,
+            "title": "Navy / White / Navy",
+            "colors": [
+              "#363651",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 14978,
+            "title": "Red / White / Royal",
+            "colors": [
+              "#3250af",
+              "#c6142c",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 14963,
+            "title": "Royal / White / Royal",
+            "colors": [
+              "#3250af",
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 3692,
+            "title": "White",
+            "colors": [
+              "#ffffff"
+            ]
+          },
+          {
+            "id": 3740,
+            "title": "Red",
+            "colors": [
+              "#c6142c"
+            ]
+          }
+        ],
+        "display_in_preview": true
       }
     ],
     "variants": [
       {
-        "id": 43163,
-        "sku": "21525037685897657224",
-        "cost": 660,
-        "price": 660,
-        "title": "14″ x 11″ / Matte",
-        "grams": 20,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1073,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 43166,
-        "sku": "29507456731331596950",
-        "cost": 1034,
-        "price": 1034,
-        "title": "18″ x 12″ / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1084,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 43169,
-        "sku": "22506040320574915050",
-        "cost": 1200,
-        "price": 1200,
-        "title": "20″ x 16″ / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1086,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 43172,
-        "sku": "30381351159033817189",
-        "cost": 1184,
-        "price": 2400,
-        "title": "24″ x 18″ / Matte",
-        "grams": 250,
+        "id": 118542,
+        "sku": "11144237875219997092",
+        "cost": 1241,
+        "price": 2600,
+        "title": "One size / Black",
+        "grams": 150,
         "is_enabled": true,
         "is_default": false,
         "is_available": true,
         "is_printify_express_eligible": false,
         "options": [
-          1088,
-          1932
+          2104,
+          3739
         ],
         "quantity": 1
       },
       {
-        "id": 43175,
-        "sku": "30224285483808536871",
-        "cost": 1380,
-        "price": 1380,
-        "title": "30″ x 20″ / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1075,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 43178,
-        "sku": "25232197407394260700",
-        "cost": 1760,
-        "price": 1760,
-        "title": "36″ x 24″ / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1090,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 62100,
-        "sku": "23910671959379827987",
-        "cost": 552,
-        "price": 552,
-        "title": "11\" x 9\" / Matte",
-        "grams": 100,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          2206,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101237,
-        "sku": "75880340044230127154",
-        "cost": 786,
-        "price": 786,
-        "title": "10″ x 10″ / Matte",
-        "grams": 13,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1197,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101238,
-        "sku": "29608621868390022103",
-        "cost": 895,
-        "price": 895,
-        "title": "13\" x 10\" / Matte",
-        "grams": 100,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4426,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101239,
-        "sku": "20954385345417011131",
-        "cost": 895,
-        "price": 895,
-        "title": "16\" x 11\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4430,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101240,
-        "sku": "20741808218642016479",
-        "cost": 1042,
-        "price": 1042,
-        "title": "17\" x 10\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4427,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101241,
-        "sku": "29864155175816333453",
-        "cost": 895,
-        "price": 895,
-        "title": "17\" x 11\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4431,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101242,
-        "sku": "11125501914290297243",
-        "cost": 1042,
-        "price": 1042,
-        "title": "20\" x 10\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4428,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101243,
-        "sku": "12795290043890898722",
-        "cost": 1187,
-        "price": 1187,
-        "title": "22\" x 11\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4432,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101245,
-        "sku": "17450895935057047918",
-        "cost": 895,
-        "price": 895,
-        "title": "12\" x 12\" / Matte",
-        "grams": 18,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4393,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101256,
-        "sku": "17293608617222385682",
-        "cost": 1111,
-        "price": 1111,
-        "title": "16\" x 12\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4433,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101257,
-        "sku": "85824769359410235344",
-        "cost": 1187,
-        "price": 1187,
-        "title": "16\" x 16\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4439,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101258,
-        "sku": "20983206614343292450",
-        "cost": 1042,
-        "price": 1042,
-        "title": "18\" x 14\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4436,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101259,
-        "sku": "47463124561058806703",
-        "cost": 1042,
-        "price": 1042,
-        "title": "19\" x 13\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4435,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101260,
-        "sku": "11108244654278835217",
-        "cost": 1187,
-        "price": 1187,
-        "title": "20\" x 17\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4441,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101261,
-        "sku": "76653964468932183194",
-        "cost": 1314,
-        "price": 1314,
-        "title": "20\" x 20\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4443,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101262,
-        "sku": "31448401779585099857",
-        "cost": 1261,
-        "price": 1261,
-        "title": "23\" x 14\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4437,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101263,
-        "sku": "10929731256570888223",
-        "cost": 1314,
-        "price": 1314,
-        "title": "24\" x 16\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4440,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101264,
-        "sku": "31461192457003718286",
-        "cost": 2032,
-        "price": 2032,
-        "title": "24\" x 20\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4444,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101265,
-        "sku": "94282540489161557829",
-        "cost": 1396,
-        "price": 1396,
-        "title": "28\" x 20\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4445,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101266,
-        "sku": "32523626381947604848",
-        "cost": 1554,
-        "price": 1554,
-        "title": "28\" x 22\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4447,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101267,
-        "sku": "31286386074812393238",
-        "cost": 1383,
-        "price": 1383,
-        "title": "30\" x 15\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4438,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101268,
-        "sku": "23510596292151752412",
-        "cost": 1383,
-        "price": 1383,
-        "title": "30\" x 22\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4448,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101269,
-        "sku": "18435468590477559515",
-        "cost": 2483,
-        "price": 2483,
-        "title": "34\" x 22\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4449,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101270,
-        "sku": "19262767118264826038",
-        "cost": 2262,
-        "price": 2262,
-        "title": "40\" x 20\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4446,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101271,
-        "sku": "23162571603253538721",
-        "cost": 3651,
-        "price": 3651,
-        "title": "40\" x 27\" / Matte",
-        "grams": 100,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4451,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101272,
-        "sku": "26052798138012221664",
-        "cost": 3771,
-        "price": 3771,
-        "title": "40\" x 30\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4452,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101273,
-        "sku": "73749861146981941591",
-        "cost": 3134,
-        "price": 3134,
-        "title": "48\" x 24\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4450,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101274,
-        "sku": "15855009459042267186",
-        "cost": 3180,
-        "price": 3180,
-        "title": "48\" x 36\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4453,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101275,
-        "sku": "23884462975121882780",
-        "cost": 3327,
-        "price": 3327,
-        "title": "54\" x 36\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4454,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101276,
-        "sku": "33094393015216360721",
-        "cost": 1187,
-        "price": 1187,
-        "title": "18\" x 18\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4399,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101277,
-        "sku": "31064747908146040894",
-        "cost": 1481,
-        "price": 1481,
-        "title": "23\" x 23\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4405,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 101278,
-        "sku": "93175391688312099569",
-        "cost": 1481,
-        "price": 1481,
-        "title": "24\" x 24\" / Matte",
-        "grams": 250,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          4406,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 112756,
-        "sku": "78295189936241958828",
-        "cost": 1396,
-        "price": 1396,
-        "title": "14\" x 14\" / Matte",
-        "grams": 60,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          1232,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 112757,
-        "sku": "85061785254076716925",
-        "cost": 3060,
-        "price": 3060,
-        "title": "28\" x 28\" / Matte",
-        "grams": 240,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          3898,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 114558,
-        "sku": "19438641238814747283",
-        "cost": 3580,
-        "price": 3580,
-        "title": "40\" x 28\" / Matte",
-        "grams": 340,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          5373,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 114559,
-        "sku": "28017653505195175239",
-        "cost": 1557,
-        "price": 1557,
-        "title": "24\" x 10\" / Matte",
-        "grams": 70,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          5370,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 114560,
-        "sku": "30707769962453716879",
-        "cost": 1259,
-        "price": 1259,
-        "title": "20\" x 8\" / Matte",
-        "grams": 50,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          5368,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 114561,
-        "sku": "26823595429600489355",
-        "cost": 974,
-        "price": 974,
-        "title": "12\" x 8\" / Matte",
-        "grams": 5500,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          2873,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 114562,
-        "sku": "17088166611396951785",
-        "cost": 2525,
-        "price": 2525,
-        "title": "32\" x 24\" / Matte",
-        "grams": 230,
-        "is_enabled": false,
-        "is_default": false,
-        "is_available": true,
-        "is_printify_express_eligible": false,
-        "options": [
-          2874,
-          1932
-        ],
-        "quantity": 1
-      },
-      {
-        "id": 114563,
-        "sku": "18403771886901927971",
-        "cost": 919,
-        "price": 919,
-        "title": "10\" x 8\" / Matte",
-        "grams": 20,
-        "is_enabled": false,
+        "id": 118549,
+        "sku": "14653719041938349986",
+        "cost": 1241,
+        "price": 2600,
+        "title": "One size / White",
+        "grams": 150,
+        "is_enabled": true,
         "is_default": true,
         "is_available": true,
         "is_printify_express_eligible": false,
         "options": [
-          5375,
-          1932
+          3692,
+          2104
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 118550,
+        "sku": "75552173957263666612",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Red",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          3740,
+          2104
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 118551,
+        "sku": "11645760704998364778",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Dark Navy",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          4688
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 118552,
+        "sku": "19535956462266916646",
+        "cost": 1241,
+        "price": 2600,
+        "title": "One size / Black/White",
+        "grams": 150,
+        "is_enabled": true,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          5640
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 118553,
+        "sku": "10512780225010969234",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Light Pink/White",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          5641,
+          2104
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 118554,
+        "sku": "28333350827127824184",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Blue/White",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          5642,
+          2104
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 243672,
+        "sku": "52797159558166718251",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Royal / White / Royal",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          14963
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 243673,
+        "sku": "58581477960372096737",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Navy / White / Navy",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          14964
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 243674,
+        "sku": "38099419703049359096",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Dark Green / White / Dark Green",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          14965
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 243675,
+        "sku": "17318585915057229862",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Hot Pink/ White/ Hot Pink",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": false,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          12711
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 243676,
+        "sku": "25018850023815975224",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Kelly/ White/ Kelly",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          12712
+        ],
+        "quantity": 1
+      },
+      {
+        "id": 243772,
+        "sku": "18798998960672889348",
+        "cost": 1241,
+        "price": 1496,
+        "title": "One size / Red / White / Royal",
+        "grams": 150,
+        "is_enabled": false,
+        "is_default": false,
+        "is_available": true,
+        "is_printify_express_eligible": false,
+        "options": [
+          2104,
+          14978
         ],
         "quantity": 1
       }
     ],
     "images": [
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_94818_front",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/94818/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=front",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118542_109489_front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118542/109489/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=front",
         "variant_ids": [
-          43172
+          118542
         ],
-        "position": "other",
+        "position": "front",
         "is_default": true,
         "is_selected_for_publishing": true,
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_94772_front-2",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/94772/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=front-2",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118542_110282_side",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118542/110282/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=side",
         "variant_ids": [
-          43172
+          118542
         ],
         "position": "other",
         "is_default": false,
@@ -1205,10 +906,10 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_99642_close-up",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/99642/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=close-up",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118542_110281_person-2-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118542/110281/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-2-front",
         "variant_ids": [
-          43172
+          118542
         ],
         "position": "other",
         "is_default": false,
@@ -1216,10 +917,10 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_95491_context-1",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/95491/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=context-1",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118542_110280_person-1-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118542/110280/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-1-front",
         "variant_ids": [
-          43172
+          118542
         ],
         "position": "other",
         "is_default": false,
@@ -1227,10 +928,10 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_95531_context-2",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/95531/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=context-2",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118542_110570_person-1-front-2",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118542/110570/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-1-front-2",
         "variant_ids": [
-          43172
+          118542
         ],
         "position": "other",
         "is_default": false,
@@ -1238,10 +939,10 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_95573_context-3",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/95573/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=context-3",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118542_127559_back",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118542/127559/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=back",
         "variant_ids": [
-          43172
+          118542
         ],
         "position": "other",
         "is_default": false,
@@ -1249,10 +950,21 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_95617_context-4",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/95617/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=context-4",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118552_109489_front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118552/109489/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=front",
         "variant_ids": [
-          43172
+          118552
+        ],
+        "position": "front",
+        "is_default": true,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118552_110282_side",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118552/110282/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=side",
+        "variant_ids": [
+          118552
         ],
         "position": "other",
         "is_default": false,
@@ -1260,10 +972,109 @@
         "order": null
       },
       {
-        "mockup_id": "6aa744b720a2bb2c3504c021_43172_95655_context-5",
-        "src": "https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/95655/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=context-5",
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118552_110281_person-2-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118552/110281/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-2-front",
         "variant_ids": [
-          43172
+          118552
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118552_110280_person-1-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118552/110280/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-1-front",
+        "variant_ids": [
+          118552
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118552_110570_person-1-front-2",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118552/110570/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-1-front-2",
+        "variant_ids": [
+          118552
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118552_127559_back",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118552/127559/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=back",
+        "variant_ids": [
+          118552
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118549_109489_front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118549/109489/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=front",
+        "variant_ids": [
+          118549
+        ],
+        "position": "front",
+        "is_default": true,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118549_110282_side",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118549/110282/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=side",
+        "variant_ids": [
+          118549
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118549_110281_person-2-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118549/110281/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-2-front",
+        "variant_ids": [
+          118549
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118549_110280_person-1-front",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118549/110280/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-1-front",
+        "variant_ids": [
+          118549
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118549_110570_person-1-front-2",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118549/110570/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=person-1-front-2",
+        "variant_ids": [
+          118549
+        ],
+        "position": "other",
+        "is_default": false,
+        "is_selected_for_publishing": true,
+        "order": null
+      },
+      {
+        "mockup_id": "6aa74b5edb4805d0e3070f57_118549_127559_back",
+        "src": "https://images-api.printify.com/mockup/6aa74b5edb4805d0e3070f57/118549/127559/wren-montgomery-sweet-tea-gasoline-foam-trucker-hat.jpg?camera_label=back",
+        "variant_ids": [
+          118549
         ],
         "position": "other",
         "is_default": false,
@@ -1271,160 +1082,92 @@
         "order": null
       }
     ],
-    "created_at": "2026-09-14 00:49:59+00:00",
-    "updated_at": "2026-09-14 00:50:00+00:00",
+    "created_at": "2026-09-14 01:18:22+00:00",
+    "updated_at": "2026-09-14 01:18:23+00:00",
     "visible": true,
-    "is_locked": true,
-    "blueprint_id": 284,
+    "is_locked": false,
+    "external": {
+      "id": "6aa74b5edb4805d0e3070f57",
+      "handle": "https://wrenmontgomery.com/merch#6aa74b5edb4805d0e3070f57",
+      "type": 6
+    },
+    "blueprint_id": 1735,
     "user_id": 28198904,
     "shop_id": 28933843,
-    "print_provider_id": 2,
+    "print_provider_id": 99,
     "print_areas": [
       {
         "variant_ids": [
-          43163,
-          43166,
-          43169,
-          43172,
-          43175,
-          43178,
-          62100,
-          101237,
-          101238,
-          101239,
-          101240,
-          101241,
-          101242,
-          101243,
-          101245,
-          101256,
-          101257,
-          101258,
-          101259,
-          101260,
-          101261,
-          101262,
-          101263,
-          101264,
-          101265,
-          101266,
-          101267,
-          101268,
-          101269,
-          101270,
-          101271,
-          101272,
-          101273,
-          101274,
-          101275,
-          101276,
-          101277,
-          101278,
-          112756,
-          112757,
-          114558,
-          114559,
-          114560,
-          114561,
-          114562,
-          114563
+          118542,
+          118549,
+          118550,
+          118551,
+          118552,
+          118553,
+          118554,
+          243672,
+          243673,
+          243674,
+          243675,
+          243676,
+          243772
         ],
         "placeholders": [
           {
-            "position": "front",
+            "position": "front_dtf",
             "images": [
               {
-                "id": "6aa744a058fa6ab38c44ebab",
-                "name": "wren_sweet_tea_and_gasoline_album.jpg",
+                "id": "6aa74b5d39f72497027aa654",
+                "name": "trucker_hat_patch.jpg",
                 "type": "image/jpeg",
-                "height": 3000,
-                "width": 3000,
+                "height": 768,
+                "width": 1376,
                 "x": 0.5,
                 "y": 0.5,
                 "flipX": false,
                 "flipY": false,
                 "scale": 1,
                 "angle": 0,
-                "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28198904/1f4c815c-5b3a-480d-a368-381357e654be",
+                "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28198904/769d03ae-8717-4b19-991a-77a54b6c2d93",
                 "layerType": "image",
-                "imageId": "6aa744a058fa6ab38c44ebab_fa2aae6e-b44a-50f5-6652-c84d911d2860"
+                "imageId": "6aa74b5d39f72497027aa654_1b5629b2-ad94-1112-6427-f965902cf69a"
               }
             ],
-            "decoration_method": "digital-printing"
+            "decoration_method": "dtf"
           }
-        ],
-        "background": "#ffffff"
+        ]
       }
     ],
     "print_details": [],
     "sales_channel_properties": [],
     "is_printify_express_eligible": false,
     "is_printify_express_enabled": false,
-    "is_economy_shipping_eligible": false,
+    "is_economy_shipping_eligible": true,
     "is_economy_shipping_enabled": false,
     "is_deleted": false,
     "original_product_id": "",
     "views": [
       {
-        "id": 117804,
+        "id": 137579,
         "label": "Front side",
-        "position": "front",
+        "position": "front_dtf",
         "files": [
           {
-            "src": "https://images.printify.com/api/catalog/648335cc0b663080dd027153.svg",
+            "src": "https://images.printify.com/api/catalog/6983663e9a667e682903e372.svg",
             "variant_ids": [
-              43163,
-              43166,
-              43169,
-              43172,
-              43175,
-              43178,
-              62100,
-              101237,
-              101238,
-              101239,
-              101240,
-              101241,
-              101242,
-              101243,
-              101245,
-              101256,
-              101257,
-              101258,
-              101259,
-              101260,
-              101261,
-              101262,
-              101263,
-              101264,
-              101265,
-              101266,
-              101267,
-              101268,
-              101269,
-              101270,
-              101271,
-              101272,
-              101273,
-              101274,
-              101275,
-              101276,
-              101277,
-              101278,
-              112752,
-              112753,
-              112754,
-              112755,
-              112756,
-              112757,
-              112758,
-              112759,
-              114558,
-              114559,
-              114560,
-              114561,
-              114562,
-              114563
+              118542,
+              118549,
+              118550,
+              118551,
+              118552,
+              118553,
+              118554,
+              243672,
+              243673,
+              243674,
+              243675,
+              243676,
+              243772
             ]
           }
         ]
@@ -3076,7 +2819,7 @@
                 "angle": 0,
                 "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28198904/cb31d6cb-8127-4728-87a6-c021db2f4aff",
                 "layerType": "image",
-                "imageId": "6aa7449f850ad7767ef318c4_b0008493-d74e-fed3-acd6-924abd56139f"
+                "imageId": "6aa7449f850ad7767ef318c4_d09461ae-8d80-f4db-6278-8cd5ca291eff"
               }
             ],
             "decoration_method": "dtg"
@@ -7177,7 +6920,7 @@
                 "angle": 0,
                 "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28198904/1389f078-acc7-4064-a7f0-f3ffbe13ac3f",
                 "layerType": "image",
-                "imageId": "6aa744934b6aa903e4fb965c_5bc170bc-6f51-4342-67fd-19145f7984fc"
+                "imageId": "6aa744934b6aa903e4fb965c_3160557e-e3e5-a4cd-613a-c4399bd03c82"
               }
             ],
             "decoration_method": "dtg"
