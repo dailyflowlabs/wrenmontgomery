@@ -392,7 +392,8 @@
 
     // Mini Player Elements
     if (heroMiniThumb) heroMiniThumb.src = track.artwork;
-    if (heroMiniTitle) heroMiniTitle.textContent = track.title;
+    const miniTitle = track.title ? track.title.replace(/\s*\([^)]*\)/g, '').trim() : '';
+    if (heroMiniTitle) heroMiniTitle.textContent = miniTitle || track.title;
     if (heroMiniSubtitle) heroMiniSubtitle.textContent = track.subtitle;
 
     updatePlaylistActiveState();

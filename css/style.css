@@ -1770,17 +1770,30 @@ img {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(245, 158, 11, 0.3);
 }
 
+.floating-player-track-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
 .mini-player-thumb {
   width: 42px;
   height: 42px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
 }
 
 .mini-player-info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .mini-player-title {
@@ -1788,12 +1801,18 @@ img {
   font-weight: 700;
   color: #fff;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .mini-player-artist {
   font-size: 0.75rem;
   color: var(--amber-gold);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .mini-play-btn {
@@ -1808,6 +1827,7 @@ img {
   color: #120e0a;
   cursor: pointer;
   transition: var(--transition);
+  flex-shrink: 0;
 }
 
 .mini-play-btn:hover {
@@ -2016,6 +2036,9 @@ img {
     width: 100%;
     margin-top: 0.5rem;
   }
+  #navStreamBtn {
+    display: none;
+  }
   .mobile-toggle {
     display: flex;
   }
@@ -2032,6 +2055,7 @@ img {
     bottom: 1rem;
     right: 1rem;
     left: 1rem;
+    max-width: calc(100% - 2rem);
     justify-content: space-between;
   }
 }
