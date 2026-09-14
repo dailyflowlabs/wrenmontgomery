@@ -133,10 +133,20 @@
   let currentTrackIndex = 0;
   let isPlaying = false;
   let isLooping = false;
+  let isWarmthOn = true;
+
+  // Web Audio Nodes
   let audioCtx = null;
-  let analyser = null;
-  let source = null;
-  let visualizerActive = false;
+  let sourceNode = null;
+  let splitterNode = null;
+  let analyserLeft = null;
+  let analyserRight = null;
+  let warmthFilter = null;
+  let dataArrayLeft = null;
+  let dataArrayRight = null;
+  let leftNeedle = -0.75;
+  let rightNeedle = -0.75;
+  let animationStarted = false;
 
   // DOM Elements
   const audio = document.getElementById('mainAudio');
@@ -146,16 +156,30 @@
   const prevTrackBtn = document.getElementById('prevTrackBtn');
   const nextTrackBtn = document.getElementById('nextTrackBtn');
   const loopTrackBtn = document.getElementById('loopTrackBtn');
+  const tubeWarmthBtn = document.getElementById('tubeWarmthBtn');
   const openLyricsBtn = document.getElementById('openLyricsBtn');
+  const closeLyricsDrawerBtn = document.getElementById('closeLyricsDrawerBtn');
+  const lyricsDrawer = document.getElementById('lyricsDrawer');
+  const notebookSongTitle = document.getElementById('notebookSongTitle');
+  const notebookLyricsBody = document.getElementById('notebookLyricsBody');
   const volumeSlider = document.getElementById('volumeSlider');
   const scrubberTrack = document.getElementById('scrubberTrack');
   const scrubberFill = document.getElementById('scrubberFill');
   const currentTimeEl = document.getElementById('currentTime');
   const totalDurationEl = document.getElementById('totalDuration');
+
+  // Vinyl & Turntable Elements
+  const vinylPlatter = document.getElementById('vinylPlatter');
+  const vinylTrackTitle = document.getElementById('vinylTrackTitle');
+  const tonearmAssembly = document.getElementById('tonearmAssembly');
+  const turntableStateLabel = document.getElementById('turntableStateLabel');
   const playerArtImg = document.getElementById('playerArtImg');
+
+  // Tuner & Meta Elements
+  const tunerTrackIndex = document.getElementById('tunerTrackIndex');
+  const playerTrackTag = document.getElementById('playerTrackTag');
   const playerTrackTitle = document.getElementById('playerTrackTitle');
   const playerTrackArtist = document.getElementById('playerTrackArtist');
-  const audioActiveBadge = document.getElementById('audioActiveBadge');
   const playlistContainer = document.getElementById('playlistContainer');
 
   // Mini Player Elements
@@ -165,52 +189,178 @@
   const heroMiniSubtitle = document.getElementById('heroMiniSubtitle');
   const heroMiniPlayBtn = document.getElementById('heroMiniPlayBtn');
 
-  // Canvas
-  const canvas = document.getElementById('visualizerCanvas');
-  const canvasCtx = canvas ? canvas.getContext('2d') : null;
+  // VU Meter Canvases
+  const vuMeterLeft = document.getElementById('vuMeterLeft');
+  const vuMeterRight = document.getElementById('vuMeterRight');
+  const vuCtxLeft = vuMeterLeft ? vuMeterLeft.getContext('2d') : null;
+  const vuCtxRight = vuMeterRight ? vuMeterRight.getContext('2d') : null;
 
   function initAudioContext() {
     if (audioCtx) return;
     try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new AudioContext();
-      analyser = audioCtx.createAnalyser();
-      analyser.fftSize = 64;
-      source = audioCtx.createMediaElementSource(audio);
-      source.connect(analyser);
-      analyser.connect(audioCtx.destination);
-      visualizerActive = true;
-      renderVisualizer();
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContextClass();
+
+      // Media Element Source
+      sourceNode = audioCtx.createMediaElementSource(audio);
+
+      // Stereo Splitter for Dual VU Meters
+      splitterNode = audioCtx.createChannelSplitter(2);
+      analyserLeft = audioCtx.createAnalyser();
+      analyserRight = audioCtx.createAnalyser();
+      analyserLeft.fftSize = 256;
+      analyserRight.fftSize = 256;
+      analyserLeft.smoothingTimeConstant = 0.75;
+      analyserRight.smoothingTimeConstant = 0.75;
+
+      dataArrayLeft = new Uint8Array(analyserLeft.frequencyBinCount);
+      dataArrayRight = new Uint8Array(analyserRight.frequencyBinCount);
+
+      // 12AX7 Tube Preamp Warmth Filter (Low-shelf boost + gentle body)
+      warmthFilter = audioCtx.createBiquadFilter();
+      warmthFilter.type = 'lowshelf';
+      warmthFilter.frequency.value = 260;
+      warmthFilter.gain.value = isWarmthOn ? 3.5 : 0;
+
+      // Audio Graph Connections
+      sourceNode.connect(splitterNode);
+      splitterNode.connect(analyserLeft, 0);
+      splitterNode.connect(analyserRight, 1);
+
+      sourceNode.connect(warmthFilter);
+      warmthFilter.connect(audioCtx.destination);
+
+      if (!animationStarted) {
+        animationStarted = true;
+        animateVUMeters();
+      }
     } catch (e) {
-      console.warn('Web Audio API not supported or autoplay restricted:', e);
+      console.warn('Web Audio API unavailable or autoplay policy restricted:', e);
     }
   }
 
-  function renderVisualizer() {
-    if (!visualizerActive || !canvasCtx || !analyser) return;
-    requestAnimationFrame(renderVisualizer);
+  function getMeterLevel(analyser, dataArray) {
+    if (!analyser || !dataArray) return 0;
+    analyser.getByteTimeDomainData(dataArray);
+    let sum = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+      const norm = (dataArray[i] - 128) / 128;
+      sum += norm * norm;
+    }
+    const rms = Math.sqrt(sum / dataArray.length);
+    return Math.min(1, rms * 3.4);
+  }
 
-    const bufferLength = analyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
-    analyser.getByteFrequencyData(dataArray);
+  function drawVUNeedle(ctx, width, height, currentAngle) {
+    ctx.clearRect(0, 0, width, height);
 
-    const width = canvas.width = canvas.parentElement.offsetWidth;
-    const height = canvas.height = canvas.parentElement.offsetHeight;
+    const cx = width / 2;
+    const cy = height + 4;
+    const r = 48;
 
-    canvasCtx.clearRect(0, 0, width, height);
+    ctx.save();
 
-    const barWidth = (width / bufferLength) * 1.8;
-    let x = 0;
+    // Calibration Arc
+    ctx.beginPath();
+    ctx.arc(cx, cy, r + 2, -Math.PI * 0.72, -Math.PI * 0.28);
+    ctx.strokeStyle = 'rgba(245, 158, 11, 0.2)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
 
-    for (let i = 0; i < bufferLength; i++) {
-      const barHeight = (dataArray[i] / 255) * height * 0.85;
-      const gradient = canvasCtx.createLinearGradient(0, height - barHeight, 0, height);
-      gradient.addColorStop(0, '#fbbf24');
-      gradient.addColorStop(1, '#b45309');
+    // Red Danger Zone Arc (+0 to +3 dB)
+    ctx.beginPath();
+    ctx.arc(cx, cy, r + 2, -Math.PI * 0.40, -Math.PI * 0.28);
+    ctx.strokeStyle = 'rgba(239, 68, 68, 0.55)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
 
-      canvasCtx.fillStyle = gradient;
-      canvasCtx.fillRect(x, height - barHeight, barWidth - 2, barHeight);
-      x += barWidth;
+    // Needle Tip Position
+    const tipX = cx + Math.sin(currentAngle) * r;
+    const tipY = cy - Math.cos(currentAngle) * r;
+
+    // Drop Shadow for Needle Depth
+    ctx.beginPath();
+    ctx.moveTo(cx + 1, cy + 1);
+    ctx.lineTo(tipX + 2, tipY + 2);
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.45)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Needle Line
+    const isOverload = currentAngle > 0.42;
+    const grad = ctx.createLinearGradient(cx, cy, tipX, tipY);
+    grad.addColorStop(0, '#f59e0b');
+    grad.addColorStop(0.7, '#fbbf24');
+    grad.addColorStop(1, isOverload ? '#ef4444' : '#f59e0b');
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(tipX, tipY);
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 1.8;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Pivot Base Cap
+    ctx.beginPath();
+    ctx.arc(cx, cy, 7, 0, Math.PI * 2);
+    ctx.fillStyle = '#1e293b';
+    ctx.fill();
+    ctx.strokeStyle = '#f59e0b';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    // Center Screw Dot
+    ctx.beginPath();
+    ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = '#fbbf24';
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function animateVUMeters() {
+    requestAnimationFrame(animateVUMeters);
+
+    let targetLeft = -0.75;
+    let targetRight = -0.75;
+
+    if (isPlaying && analyserLeft && analyserRight && dataArrayLeft && dataArrayRight) {
+      const rawLeft = getMeterLevel(analyserLeft, dataArrayLeft);
+      const rawRight = getMeterLevel(analyserRight, dataArrayRight);
+
+      targetLeft = -0.75 + rawLeft * 1.48;
+      targetRight = -0.75 + rawRight * 1.48;
+
+      // Subtle natural analog flutter
+      targetLeft += (Math.random() - 0.5) * 0.035;
+      targetRight += (Math.random() - 0.5) * 0.035;
+    }
+
+    // Realistic Analog Ballistics: Fast Rise (Attack), Smooth Decay (Dampened Release)
+    const attackSpeed = 0.45;
+    const decaySpeed = 0.085;
+
+    if (targetLeft > leftNeedle) {
+      leftNeedle += (targetLeft - leftNeedle) * attackSpeed;
+    } else {
+      leftNeedle += (targetLeft - leftNeedle) * decaySpeed;
+    }
+
+    if (targetRight > rightNeedle) {
+      rightNeedle += (targetRight - rightNeedle) * attackSpeed;
+    } else {
+      rightNeedle += (targetRight - rightNeedle) * decaySpeed;
+    }
+
+    leftNeedle = Math.max(-0.75, Math.min(0.75, leftNeedle));
+    rightNeedle = Math.max(-0.75, Math.min(0.75, rightNeedle));
+
+    if (vuCtxLeft && vuMeterLeft) {
+      drawVUNeedle(vuCtxLeft, vuMeterLeft.width, vuMeterLeft.height, leftNeedle);
+    }
+    if (vuCtxRight && vuMeterRight) {
+      drawVUNeedle(vuCtxRight, vuMeterRight.width, vuMeterRight.height, rightNeedle);
     }
   }
 
@@ -229,11 +379,19 @@
     audio.src = track.src;
     audio.load();
 
-    if (playerArtImg) playerArtImg.src = track.artwork;
+    // Turntable & Disc Updates
+    if (vinylTrackTitle) vinylTrackTitle.textContent = track.title;
+    if (tunerTrackIndex) tunerTrackIndex.textContent = `TRACK ${String(index + 1).padStart(2, '0')} OF 12`;
+    if (playerTrackTag) playerTrackTag.textContent = track.tag || 'Studio Master';
     if (playerTrackTitle) playerTrackTitle.textContent = track.title;
     if (playerTrackArtist) playerTrackArtist.textContent = `Wren Montgomery • ${track.subtitle}`;
     if (totalDurationEl) totalDurationEl.textContent = track.duration;
 
+    // Songwriter Journal / Lyrics
+    if (notebookSongTitle) notebookSongTitle.textContent = `Songwriter's Journal — ${track.title}`;
+    if (notebookLyricsBody) notebookLyricsBody.textContent = track.lyrics || 'Lyrics currently in archival review.';
+
+    // Mini Player Elements
     if (heroMiniThumb) heroMiniThumb.src = track.artwork;
     if (heroMiniTitle) heroMiniTitle.textContent = track.title;
     if (heroMiniSubtitle) heroMiniSubtitle.textContent = track.subtitle;
@@ -249,16 +407,16 @@
 
     audio.play().then(() => {
       isPlaying = true;
-      updatePlayPauseIcons(true);
+      updatePlayStateUI(true);
     }).catch(err => {
-      console.warn('Playback blocked or pending interaction:', err);
+      console.warn('Playback deferred pending user interaction:', err);
     });
   }
 
   function pauseTrack() {
     audio.pause();
     isPlaying = false;
-    updatePlayPauseIcons(false);
+    updatePlayStateUI(false);
   }
 
   function togglePlayPause() {
@@ -269,17 +427,31 @@
     }
   }
 
-  function updatePlayPauseIcons(playing) {
-    const playIconSvg = '<svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-    const pauseIconSvg = '<svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+  function updatePlayStateUI(playing) {
+    const playIconSvg = '<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+    const pauseIconSvg = '<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
     const miniPlaySvg = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
     const miniPauseSvg = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
     if (playPauseMasterBtn) playPauseMasterBtn.innerHTML = playing ? pauseIconSvg : playIconSvg;
     if (heroMiniPlayBtn) heroMiniPlayBtn.innerHTML = playing ? miniPauseSvg : miniPlaySvg;
-    if (audioActiveBadge) {
-      audioActiveBadge.style.opacity = playing ? '1' : '0.4';
+
+    // Physical Turntable Motion
+    if (vinylPlatter) {
+      if (playing) vinylPlatter.classList.add('spinning');
+      else vinylPlatter.classList.remove('spinning');
     }
+    if (tonearmAssembly) {
+      if (playing) tonearmAssembly.classList.add('dropped');
+      else tonearmAssembly.classList.remove('dropped');
+    }
+    if (turntableStateLabel) {
+      turntableStateLabel.textContent = playing ? 'PLAYING 33⅓ RPM' : 'NEEDLE REST';
+      turntableStateLabel.style.color = playing ? '#10b981' : '#fbbf24';
+    }
+
+    // Toggle active animations on track cards
+    updatePlaylistActiveState();
   }
 
   function renderPlaylist() {
@@ -287,39 +459,50 @@
     playlistContainer.innerHTML = '';
 
     tracks.forEach((track, idx) => {
-      const item = document.createElement('div');
-      item.className = `playlist-item ${idx === currentTrackIndex ? 'active' : ''}`;
-      item.dataset.index = idx;
+      const card = document.createElement('div');
+      card.className = `track-card ${idx === currentTrackIndex ? 'active' : ''}`;
+      card.dataset.index = idx;
 
-      item.innerHTML = `
-        <div class="playlist-track-left">
-          <span class="track-num">${idx + 1}</span>
-          <div class="track-info">
-            <div class="track-info-name">${track.title}</div>
-            <div class="track-info-sub">${track.subtitle}</div>
+      card.innerHTML = `
+        <div class="track-card-left">
+          <div class="track-num-badge">${String(idx + 1).padStart(2, '0')}</div>
+          <div class="track-card-info">
+            <div class="track-card-title">${track.title}</div>
+            <span class="track-card-pill">${track.tag || track.subtitle}</span>
           </div>
         </div>
-        <div class="track-dur">${track.duration}</div>
+        <div class="track-card-right">
+          <span class="track-card-dur">${track.duration}</span>
+          <div class="track-eq-anim">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+        </div>
       `;
 
-      item.addEventListener('click', () => {
+      card.addEventListener('click', () => {
         loadTrack(idx);
         playTrack();
       });
 
-      playlistContainer.appendChild(item);
+      playlistContainer.appendChild(card);
     });
   }
 
   function updatePlaylistActiveState() {
     if (!playlistContainer) return;
-    const items = playlistContainer.querySelectorAll('.playlist-item');
-    items.forEach((item, idx) => {
+    const cards = playlistContainer.querySelectorAll('.track-card');
+    cards.forEach((card, idx) => {
       if (idx === currentTrackIndex) {
-        item.classList.add('active');
-        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        card.classList.add('active');
+        const eqBars = card.querySelectorAll('.eq-bar');
+        eqBars.forEach(bar => {
+          bar.style.animationPlayState = isPlaying ? 'running' : 'paused';
+        });
       } else {
-        item.classList.remove('active');
+        card.classList.remove('active');
       }
     });
   }
@@ -397,6 +580,38 @@
     });
   }
 
+  // 12AX7 Tube Preamp Warmth Switch
+  if (tubeWarmthBtn) {
+    tubeWarmthBtn.addEventListener('click', () => {
+      isWarmthOn = !isWarmthOn;
+      tubeWarmthBtn.classList.toggle('active', isWarmthOn);
+      if (warmthFilter && audioCtx) {
+        warmthFilter.gain.setTargetAtTime(isWarmthOn ? 3.5 : 0, audioCtx.currentTime, 0.05);
+      }
+    });
+  }
+
+  // Songwriter's Journal / Lyric Sheet Drawer
+  function toggleLyricDrawer() {
+    if (!lyricsDrawer) return;
+    const isOpen = lyricsDrawer.classList.toggle('active');
+    if (openLyricsBtn) openLyricsBtn.classList.toggle('active', isOpen);
+    if (isOpen) {
+      lyricsDrawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  if (openLyricsBtn) {
+    openLyricsBtn.addEventListener('click', toggleLyricDrawer);
+  }
+
+  if (closeLyricsDrawerBtn) {
+    closeLyricsDrawerBtn.addEventListener('click', () => {
+      if (lyricsDrawer) lyricsDrawer.classList.remove('active');
+      if (openLyricsBtn) openLyricsBtn.classList.remove('active');
+    });
+  }
+
   if (heroStreamNowBtn) {
     heroStreamNowBtn.addEventListener('click', () => {
       const musicSec = document.getElementById('music');
@@ -414,7 +629,7 @@
     });
   }
 
-  // Floating Mini Player Click -> Scroll to Vault
+  // Floating Mini Player Click -> Scroll to Turntable Deck
   if (persistentMiniPlayer) {
     persistentMiniPlayer.addEventListener('click', (e) => {
       if (e.target.closest('#heroMiniPlayBtn')) return;
@@ -423,26 +638,13 @@
     });
   }
 
-  // Lyrics Modal
-  const lyricsModal = document.getElementById('lyricsModal');
-  const lyricsModalTitle = document.getElementById('lyricsModalTitle');
-  const lyricsModalContent = document.getElementById('lyricsModalContent');
-
-  if (openLyricsBtn && lyricsModal) {
-    openLyricsBtn.addEventListener('click', () => {
-      const track = tracks[currentTrackIndex];
-      if (lyricsModalTitle) lyricsModalTitle.textContent = `${track.title} — Lyrics`;
-      if (lyricsModalContent) lyricsModalContent.textContent = track.lyrics || 'Lyrics coming soon.';
-      lyricsModal.classList.add('active');
-    });
+  // Initial draw of idle VU meters
+  if (vuCtxLeft && vuMeterLeft) {
+    drawVUNeedle(vuCtxLeft, vuMeterLeft.width, vuMeterLeft.height, -0.75);
   }
-
-  // Close modals
-  document.querySelectorAll('[data-modal-close]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.modal-overlay').forEach(modal => modal.classList.remove('active'));
-    });
-  });
+  if (vuCtxRight && vuMeterRight) {
+    drawVUNeedle(vuCtxRight, vuMeterRight.width, vuMeterRight.height, -0.75);
+  }
 
   // Init
   loadTrack(0);
