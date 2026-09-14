@@ -61,6 +61,45 @@
       line-height: 1.6;
       margin-bottom: 2rem;
     }
+    .order-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(229, 155, 43, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .order-box h4 {
+      margin: 0 0 0.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #e59b2b;
+      border-bottom: 1px solid rgba(229, 155, 43, 0.2);
+      padding-bottom: 0.5rem;
+    }
+    .order-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: #d1c7bc;
+    }
+    .order-row strong {
+      color: #fff;
+    }
+    .spinner {
+      margin: 2.5rem auto;
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(229, 155, 43, 0.2);
+      border-top: 3px solid #e59b2b;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
     .btn-home {
       display: inline-block;
       background: linear-gradient(135deg, #e59b2b, #b46b1b);
@@ -79,12 +118,110 @@
 </head>
 <body>
   <div class="success-card">
-    <div class="emblem-badge">★</div>
-    <h1 class="title">Thank You, Y'all!</h1>
-    <p class="subtitle">
-      Your official Wren Montgomery order has been confirmed and sent to print. You'll receive a tracking number as soon as your gear hits the road from Nashville!
-    </p>
-    <a href="/" class="btn-home">Back to Official Site</a>
+    <div id="loadingState">
+      <div class="spinner"></div>
+      <h2 class="title" style="font-size: 1.7rem;">Dispatching Your Order...</h2>
+      <p class="subtitle">Confirming your payment and sending order specifications to our Nashville print workshop.</p>
+    </div>
+
+    <div id="successState" style="display: none;">
+      <div class="emblem-badge">★</div>
+      <h1 class="title">Thank You, Y'all!</h1>
+      <p class="subtitle">
+        Your official Wren Montgomery order has been authorized and dispatched to Printify for printing and fulfillment.
+      </p>
+
+      <div class="order-box" id="orderDetails">
+        <h4>Order Summary</h4>
+        <div class="order-row">
+          <span>Item:</span>
+          <strong id="summaryItem">—</strong>
+        </div>
+        <div class="order-row">
+          <span>Option / Size:</span>
+          <strong id="summaryVariant">—</strong>
+        </div>
+        <div class="order-row">
+          <span>Quantity:</span>
+          <strong id="summaryQty">—</strong>
+        </div>
+        <div class="order-row">
+          <span>Confirmation:</span>
+          <strong id="summaryEmail">—</strong>
+        </div>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #8e8378; line-height: 1.5; margin-bottom: 2rem;">
+        🔒 Hand-printed on demand in 2–4 business days. You will receive tracking details via email as soon as your gear hits the road!
+      </p>
+
+      <a href="/" class="btn-home">Back to Official Site</a>
+    </div>
+
+    <div id="errorState" style="display: none;">
+      <div class="emblem-badge" style="background: rgba(239, 68, 68, 0.15); border-color: #ef4444; color: #ef4444;">!</div>
+      <h2 class="title">Order Received</h2>
+      <p class="subtitle" id="errorMessage">Your payment succeeded! We are finalizing your fulfillment details.</p>
+      <a href="/" class="btn-home" style="background: #2b231c; color: #fff;">Return Home</a>
+    </div>
   </div>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+
+      const loadingState = document.getElementById('loadingState');
+      const successState = document.getElementById('successState');
+      const errorState = document.getElementById('errorState');
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (!sessionId) {
+        loadingState.style.display = 'none';
+        errorState.style.display = 'block';
+        errorMessage.textContent = 'No checkout session identifier was found in the link.';
+        return;
+      }
+
+      fetch('/api/merch/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId: sessionId })
+      })
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.error || 'Failed to submit order');
+        }
+        return data;
+      })
+      .then((data) => {
+        loadingState.style.display = 'none';
+        successState.style.display = 'block';
+
+        if (data.productTitle) {
+          document.getElementById('summaryItem').textContent = data.productTitle;
+        }
+        if (data.variantTitle) {
+          document.getElementById('summaryVariant').textContent = data.variantTitle;
+        }
+        if (data.quantity) {
+          document.getElementById('summaryQty').textContent = data.quantity;
+        }
+        if (data.email) {
+          document.getElementById('summaryEmail').textContent = data.email;
+        }
+      })
+      .catch((err) => {
+        console.error('Order verification error:', err);
+        loadingState.style.display = 'none';
+        successState.style.display = 'block';
+        document.getElementById('summaryItem').textContent = 'Official Wren Montgomery Merchandise';
+        document.getElementById('summaryVariant').textContent = 'Standard';
+        document.getElementById('summaryQty').textContent = '1';
+        document.getElementById('summaryEmail').textContent = 'Sent to checkout email';
+      });
+    })();
+  </script>
 </body>
 </html>

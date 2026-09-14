@@ -40,16 +40,17 @@
         </a>
 
         <div class="nav-links" id="navMenu">
-          <a href="#music" class="nav-link">Music</a>
+          <a href="#music" class="nav-link">The Album</a>
+          <a href="#videos" class="nav-link">Videos</a>
           <a href="#gallery" class="nav-link">Visuals</a>
           <a href="#story" class="nav-link">The Story</a>
           <a href="#merch" class="nav-link">Merch</a>
           <a href="#join" class="nav-link">Tailgate Club</a>
-          <a href="#music" class="btn-nav nav-drawer-btn nav-link">Stream Single</a>
+          <a href="#music" class="btn-nav nav-drawer-btn nav-link">Stream Album</a>
         </div>
 
         <div class="nav-actions">
-          <a href="#music" class="btn-nav" id="navStreamBtn">Stream Single</a>
+          <a href="#music" class="btn-nav" id="navStreamBtn">Stream Album</a>
           <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -74,16 +75,16 @@
     <div class="container hero-content">
       <div class="hero-badge">
         <span class="pulse-dot"></span>
-        <span>Debut Single Out Now</span>
+        <span>Debut Album Out Now</span>
       </div>
 
       <h1 class="hero-title">
         <span>WREN MONTGOMERY</span>
-        AIN'T MY FIRST RODEO
+        SWEET TEA &amp; GASOLINE
       </h1>
 
       <p class="hero-subtitle">
-        Viral modern country-pop forged on the tailgates of Leiper's Fork, Tennessee. Infectious fiddle hooks, driving four-on-the-floor stomps, and sweet Southern sass.
+        The 12-track debut album forged on the tailgates of Leiper's Fork, Tennessee. Infectious fiddle hooks, driving four-on-the-floor stomps, and sweet Southern sass.
       </p>
 
       <div class="hero-cta-group">
@@ -91,7 +92,7 @@
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
             <path d="M8 5v14l11-7z"/>
           </svg>
-          Stream Debut Single
+          Stream The Album
         </button>
         <a href="#merch" class="btn btn-secondary btn-lg">
           Explore Merch Line
@@ -107,15 +108,15 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">The Barn Jukebox</span>
-        <h2 class="section-title">AIN'T MY FIRST RODEO</h2>
-        <p class="section-desc">Experience the debut single with studio master audio, acoustic vocal take, live frequency visualizer, and complete lyrics.</p>
+        <h2 class="section-title">SWEET TEA &amp; GASOLINE</h2>
+        <p class="section-desc">Stream all 12 tracks from Wren's debut studio album with studio master audio, live frequency visualizer, and complete lyrics.</p>
       </div>
 
       <div class="player-container">
         <!-- Left: Track Display & Visualizer -->
         <div class="player-art-col">
           <div class="player-art-frame">
-            <img src="images/shot_01_tailgate_wide.jpg" alt="Now Playing Single Artwork" id="playerArtImg" class="player-art-img">
+            <img src="images/sweet_tea_and_gasoline_3000x3000.jpg" alt="Sweet Tea & Gasoline Debut Album Cover" id="playerArtImg" class="player-art-img">
             <div class="audio-active-badge" id="audioActiveBadge">
               <span class="pulse-dot"></span>
               <span>LIVE AUDIO</span>
@@ -194,8 +195,8 @@
           <!-- Playlist Items -->
           <div class="playlist-card">
             <div class="playlist-header">
-              <span>Track Selection</span>
-              <span>3 Editions</span>
+              <span>Album Tracklist</span>
+              <span>12 Master Tracks</span>
             </div>
             <div class="playlist-items" id="playlistContainer">
               <!-- Populated by player.js -->
@@ -204,6 +205,51 @@
 
           <!-- Native Audio Engine -->
           <audio id="mainAudio" preload="metadata"></audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Official Music Videos Section
+       ======================================================================== -->
+  <section class="section-pad video-section" id="videos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Watch &amp; Stream</span>
+        <h2 class="section-title">OFFICIAL MUSIC VIDEOS</h2>
+        <p class="section-desc">Experience Wren Montgomery live on the festival stage and home on the tailgates of Tennessee.</p>
+      </div>
+
+      <div class="video-showcase-grid">
+        <!-- Video 1: Live Festival Concert Cut -->
+        <div class="video-card">
+          <div class="video-media-wrap">
+            <video controls preload="metadata" playsinline poster="videos/Wren_Montgomery_Outdoor_Concert_Thumbnail.jpg">
+              <source src="videos/Wren_Montgomery_Outdoor_Concert_30s_Hybrid_Master.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-card-body">
+            <span class="video-badge">Live Festival Performance</span>
+            <h3 class="video-title">Ain't My First Rodeo (Live Festival Short)</h3>
+            <p class="video-desc">Wren rocking the main stage under the festival lights with high-energy fiddle stomps and an electric crowd singalong.</p>
+          </div>
+        </div>
+
+        <!-- Video 2: Tailgate Session Cut -->
+        <div class="video-card">
+          <div class="video-media-wrap">
+            <video controls preload="metadata" playsinline poster="videos/Wren_Montgomery_Short_Thumbnail.jpg">
+              <source src="videos/Wren_Montgomery_First_Rodeo_30s_Hybrid_Master.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-card-body">
+            <span class="video-badge">Official Tailgate Session</span>
+            <h3 class="video-title">Ain't My First Rodeo (Tailgate Session)</h3>
+            <p class="video-desc">Golden hour on the lowered tailgate of her vintage 1978 blue Ford pickup in Leiper's Fork, Tennessee.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -244,13 +290,28 @@
       <div class="carousel-container" id="carouselContainer">
         <div class="carousel-viewport" id="carouselViewport">
           <div class="carousel-track" id="carouselTrack">
-            <!-- Slide 1 -->
-            <div class="carousel-slide" data-index="0" data-img="images/shot_01_tailgate_wide.jpg" data-title="Tailgate Sweetheart" data-tag="Golden Hour • Scene 1" data-desc="Sitting on the lowered tailgate of her vintage 1978 blue Ford pickup in Leiper's Fork at sunset.">
+            <!-- Slide 1: Live Festival Concert -->
+            <div class="carousel-slide" data-index="0" data-img="images/concert_01_front_singing.jpg" data-title="Live on the Main Stage" data-tag="Festival Lights" data-desc="Wren commanding the main stage under golden floodlights and summer air.">
               <div class="slide-card">
-                <img src="images/shot_01_tailgate_wide.jpg" alt="Wren Montgomery on Ford truck tailgate" class="slide-img" loading="lazy">
+                <img src="images/concert_01_front_singing.jpg" alt="Wren Montgomery singing live on festival stage" class="slide-img" loading="lazy">
                 <div class="slide-overlay">
-                  <span class="slide-badge">Golden Hour • Scene 1</span>
-                  <h3 class="slide-title">Tailgate Sweetheart</h3>
+                  <span class="slide-badge">Festival Lights</span>
+                  <h3 class="slide-title">Live on the Main Stage</h3>
+                  <p class="slide-desc">Main stage energy & fiddle stomps</p>
+                  <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Tailgate Golden Hour -->
+            <div class="carousel-slide" data-index="1" data-img="images/shot_01_tailgate_wide.jpg" data-title="The Tailgate Sweetheart" data-tag="Leiper's Fork Sunset" data-desc="Golden hour on the lowered tailgate of her vintage 1978 blue Ford pickup.">
+              <div class="slide-card">
+                <img src="images/shot_01_tailgate_wide.jpg" alt="Wren Montgomery on vintage Ford tailgate" class="slide-img" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">Leiper's Fork Sunset</span>
+                  <h3 class="slide-title">The Tailgate Sweetheart</h3>
                   <p class="slide-desc">1978 Ford pickup at golden hour</p>
                   <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
@@ -259,14 +320,14 @@
               </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-slide" data-index="1" data-img="images/shot_02_tailgate_lipsync_front.jpg" data-title="Ain't My First Rodeo" data-tag="Front Lipsync • Scene 2" data-desc="Tied rodeo graphic tee, playful smirk, and botanical wildflower ink.">
+            <!-- Slide 3: Cheering Cowboy Crowd -->
+            <div class="carousel-slide" data-index="2" data-img="images/concert_02_crowd_cowboys.jpg" data-title="Sea of Stetsons" data-tag="Country Crowd" data-desc="Crowd of cowboys and cowgirls singing along to every word under the dusk lights.">
               <div class="slide-card">
-                <img src="images/shot_02_tailgate_lipsync_front.jpg" alt="Wren Montgomery singing with tied graphic tee" class="slide-img" loading="lazy">
+                <img src="images/concert_02_crowd_cowboys.jpg" alt="Cheering cowboy festival crowd" class="slide-img" loading="lazy">
                 <div class="slide-overlay">
-                  <span class="slide-badge">Front Lipsync • Scene 2</span>
-                  <h3 class="slide-title">Ain't My First Rodeo</h3>
-                  <p class="slide-desc">Sassy smile & rodeo graphic tee</p>
+                  <span class="slide-badge">Country Crowd</span>
+                  <h3 class="slide-title">Sea of Stetsons</h3>
+                  <p class="slide-desc">Packed festival crowd singing along</p>
                   <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                   </button>
@@ -274,42 +335,12 @@
               </div>
             </div>
 
-            <!-- Slide 3 -->
-            <div class="carousel-slide" data-index="2" data-img="images/shot_03_tailgate_side_laugh.jpg" data-title="Tennessee Sunset" data-tag="Tailgate Breeze • Scene 3" data-desc="Golden Tennessee rim light illuminating honey-blonde beach waves.">
-              <div class="slide-card">
-                <img src="images/shot_03_tailgate_side_laugh.jpg" alt="Wren Montgomery laughing in golden sunset" class="slide-img" loading="lazy">
-                <div class="slide-overlay">
-                  <span class="slide-badge">Tailgate Breeze • Scene 3</span>
-                  <h3 class="slide-title">Tennessee Sunset</h3>
-                  <p class="slide-desc">Golden hour rim light & laughter</p>
-                  <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="carousel-slide" data-index="3" data-img="images/shot_04_tailgate_climax_punchline.jpg" data-title="Just My First Clown" data-tag="Punchline Smirk • Scene 4" data-desc="Side profile delivery of the viral hook with signature botanical ink.">
-              <div class="slide-card">
-                <img src="images/shot_04_tailgate_climax_punchline.jpg" alt="Wren Montgomery Delivering single punchline" class="slide-img" loading="lazy">
-                <div class="slide-overlay">
-                  <span class="slide-badge">Punchline Smirk • Scene 4</span>
-                  <h3 class="slide-title">Just My First Clown</h3>
-                  <p class="slide-desc">Delivering the chorus punchline</p>
-                  <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 5 -->
-            <div class="carousel-slide" data-index="4" data-img="images/wren_portrait_front.jpg" data-title="Hazel & Honey" data-tag="Studio Close-Up • Session A" data-desc="Direct gaze showing hazel-green eyes with warm amber flecks and natural sun-kissed freckles.">
+            <!-- Slide 4: Studio Hazel Eyes Close-Up -->
+            <div class="carousel-slide" data-index="3" data-img="images/wren_portrait_front.jpg" data-title="Hazel & Honey" data-tag="Studio Close-Up" data-desc="Direct gaze showing hazel-green eyes with warm amber flecks and natural sun-kissed freckles.">
               <div class="slide-card">
                 <img src="images/wren_portrait_front.jpg" alt="Wren Montgomery studio portrait" class="slide-img" loading="lazy">
                 <div class="slide-overlay">
-                  <span class="slide-badge">Studio Close-Up • Session A</span>
+                  <span class="slide-badge">Studio Close-Up</span>
                   <h3 class="slide-title">Hazel & Honey</h3>
                   <p class="slide-desc">Natural freckles & hazel eyes</p>
                   <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
@@ -319,14 +350,29 @@
               </div>
             </div>
 
-            <!-- Slide 6 -->
-            <div class="carousel-slide" data-index="5" data-img="images/wren_three_quarter_smile.jpg" data-title="Nashville Chic" data-tag="Lounge Session • Session B" data-desc="Embroidered western silk shirt and signature layered gold necklaces.">
+            <!-- Slide 5: Side Profile Festival Singing -->
+            <div class="carousel-slide" data-index="4" data-img="images/concert_03_side_profile.jpg" data-title="Golden Hour Anthem" data-tag="Live Side Profile" data-desc="Dramatic 90-degree side profile singing into the stage microphone under golden rim lighting.">
               <div class="slide-card">
-                <img src="images/wren_three_quarter_smile.jpg" alt="Wren Montgomery Nashville chic look" class="slide-img" loading="lazy">
+                <img src="images/concert_03_side_profile.jpg" alt="Wren Montgomery side profile singing on stage" class="slide-img" loading="lazy">
                 <div class="slide-overlay">
-                  <span class="slide-badge">Lounge Session • Session B</span>
-                  <h3 class="slide-title">Nashville Chic</h3>
-                  <p class="slide-desc">Silk western button-down blouse</p>
+                  <span class="slide-badge">Live Side Profile</span>
+                  <h3 class="slide-title">Golden Hour Anthem</h3>
+                  <p class="slide-desc">Golden sunset rim light & passion</p>
+                  <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Tailgate Sunset Laughter -->
+            <div class="carousel-slide" data-index="5" data-img="images/shot_03_tailgate_side_laugh.jpg" data-title="Tennessee Gold" data-tag="Tailgate Laughs" data-desc="Golden Tennessee rim light illuminating honey-blonde beach waves and unvarnished laughter.">
+              <div class="slide-card">
+                <img src="images/shot_03_tailgate_side_laugh.jpg" alt="Wren Montgomery laughing in golden sunset" class="slide-img" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">Tailgate Laughs</span>
+                  <h3 class="slide-title">Tennessee Gold</h3>
+                  <p class="slide-desc">Golden hour rim light & laughter</p>
                   <button class="slide-zoom-btn" data-lightbox-trigger aria-label="View fullscreen">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                   </button>
@@ -376,7 +422,7 @@
             Her debut single <em>"Ain't My First Rodeo (Just My First Clown)"</em> is the anthem for anyone who’s ever let a charming cowboy talk big, only to hand him his hat on the way out the screen door. Driving telecaster chicken-pickin', snappy handclaps, and a punchline chorus you can't get out of your head.
           </p>
           <div style="margin-top: 2rem;">
-            <a href="#music" class="btn btn-primary">Listen to the Single</a>
+            <a href="#music" class="btn btn-primary">Listen to the Album</a>
           </div>
         </div>
       </div>
@@ -391,14 +437,14 @@
       <div class="section-header">
         <span class="section-tag">The General Store</span>
         <h2 class="section-title">OFFICIAL MERCHANDISE</h2>
-        <p class="section-desc">Vintage washed tees, campfire hoodies, and archival tour art straight from Nashville, Tennessee.</p>
+        <p class="section-desc">Vintage washed tees, campfire hoodies, and archival tour art printed on demand straight from Nashville, Tennessee.</p>
       </div>
 
       <div class="merch-grid">
         <!-- Item 1: Washed Rodeo Tee -->
         <div class="merch-card">
           <div class="merch-img-wrap">
-            <img src="images/shot_02_tailgate_lipsync_front.jpg" alt="Ain't My First Rodeo Vintage Tee" class="merch-img">
+            <img src="https://images-api.printify.com/mockup/6aa744af822a7c308c02ce21/18102/102044/wren-montgomery-aint-my-first-rodeo-vintage-tee.jpg?camera_label=front-2" alt="Ain't My First Rodeo Vintage Tee" class="merch-img">
             <span class="merch-badge">Best Seller</span>
           </div>
           <div class="merch-body">
@@ -408,8 +454,8 @@
               <span class="merch-price">$34.00</span>
               <span class="merch-curr">USD</span>
             </div>
-            <p class="merch-desc">Faded sand ringspun cotton tee with retro rodeo lettering and signature botanical collar print.</p>
-            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('rodeo_tee')">
+            <p class="merch-desc">Ultra-soft ringspun cotton tee with hand-drawn retro rodeo boots, wildflowers, and Leiper's Fork lettering.</p>
+            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('6aa744af822a7c308c02ce21')">
               Select Size & Buy
             </button>
           </div>
@@ -418,38 +464,38 @@
         <!-- Item 2: Heavyweight Campfire Hoodie -->
         <div class="merch-card">
           <div class="merch-img-wrap">
-            <img src="images/shot_01_tailgate_wide.jpg" alt="All Buckle No Belt Campfire Hoodie" class="merch-img">
+            <img src="https://images-api.printify.com/mockup/6aa744b3ee56209b31095f82/32920/98424/wren-montgomery-sweet-tea-gasoline-heavyweight-hoodie.jpg?camera_label=front" alt="Sweet Tea & Gasoline Campfire Hoodie" class="merch-img">
             <span class="merch-badge">Heavy Fleece</span>
           </div>
           <div class="merch-body">
             <span class="merch-tag">10oz Heavy Fleece</span>
-            <h4 class="merch-title">All Buckle No Belt Hoodie</h4>
+            <h4 class="merch-title">Sweet Tea & Gasoline Campfire Hoodie</h4>
             <div class="merch-price-row">
               <span class="merch-price">$58.00</span>
               <span class="merch-curr">USD</span>
             </div>
-            <p class="merch-desc">Midnight navy fleece pullover with front pouch pocket. Made for chilly autumn nights on the tailgate.</p>
-            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('campfire_hoodie')">
+            <p class="merch-desc">10oz heavyweight fleece hoodie in dusty midnight navy featuring the authentic Sweet Tea & Gasoline tailgate emblem.</p>
+            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('6aa744b3ee56209b31095f82')">
               Select Size & Buy
             </button>
           </div>
         </div>
 
-        <!-- Item 3: Archival Fine Art Poster -->
+        <!-- Item 3: Archival Tour Poster -->
         <div class="merch-card">
           <div class="merch-img-wrap">
-            <img src="images/shot_03_tailgate_side_laugh.jpg" alt="The Tailgate Sweetheart Tour Poster" class="merch-img">
-            <span class="merch-badge">18" x 24"</span>
+            <img src="https://images-api.printify.com/mockup/6aa744b720a2bb2c3504c021/43172/94818/wren-montgomery-sweet-tea-gasoline-tour-poster.jpg?camera_label=front" alt="Sweet Tea & Gasoline Tour Poster" class="merch-img">
+            <span class="merch-badge">24" x 18"</span>
           </div>
           <div class="merch-body">
             <span class="merch-tag">Archival Matte Print</span>
-            <h4 class="merch-title">The Tailgate Sweetheart Poster</h4>
+            <h4 class="merch-title">Sweet Tea & Gasoline Tour Poster</h4>
             <div class="merch-price-row">
               <span class="merch-price">$24.00</span>
               <span class="merch-curr">USD</span>
             </div>
-            <p class="merch-desc">Museum-grade heavy matte print of Wren on her 1978 blue Ford tailgate at golden hour.</p>
-            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('tour_poster')">
+            <p class="merch-desc">18" x 24" archival museum-grade matte giclée fine art print of the official Sweet Tea & Gasoline debut album artwork.</p>
+            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('6aa744b720a2bb2c3504c021')">
               Order Art Print
             </button>
           </div>
@@ -458,18 +504,18 @@
         <!-- Item 4: Wildflower Camp Mug -->
         <div class="merch-card">
           <div class="merch-img-wrap">
-            <img src="images/wren_wildflower_tattoo.jpg" alt="Wildflower Enamel Camp Mug" class="merch-img">
+            <img src="https://images-api.printify.com/mockup/6aa744ba7f746fb4ed0e67f9/33719/6400/wren-montgomery-sweet-tea-gasoline-ceramic-camp-mug-11oz.jpg?camera_label=front" alt="Sweet Tea & Gasoline Ceramic Camp Mug" class="merch-img">
             <span class="merch-badge">Camp Essential</span>
           </div>
           <div class="merch-body">
-            <span class="merch-tag">12oz Speckled Enamel</span>
-            <h4 class="merch-title">Wildflower Enamel Camp Mug</h4>
+            <span class="merch-tag">11oz High-Gloss Ceramic</span>
+            <h4 class="merch-title">Sweet Tea & Gasoline Ceramic Mug</h4>
             <div class="merch-price-row">
-              <span class="merch-price">$18.00</span>
+              <span class="merch-price">$16.00</span>
               <span class="merch-curr">USD</span>
             </div>
-            <p class="merch-desc">Durable steel-rimmed speckled enamel camp mug featuring Wren's signature botanical wildflower artwork.</p>
-            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('camp_mug')">
+            <p class="merch-desc">High gloss 11oz ceramic mug featuring Wren Montgomery's official debut album and botanical wildflower motif.</p>
+            <button class="btn btn-primary merch-buy-btn" onclick="openMerchModal('6aa744ba7f746fb4ed0e67f9')">
               Order Camp Mug
             </button>
           </div>
@@ -513,6 +559,7 @@
           <h5>NAVIGATION</h5>
           <ul class="footer-links">
             <li><a href="#music">The Barn Jukebox</a></li>
+            <li><a href="#videos">Official Videos</a></li>
             <li><a href="#gallery">Visual Archives</a></li>
             <li><a href="#story">The Story</a></li>
             <li><a href="#merch">General Store</a></li>

@@ -224,23 +224,31 @@
     fetch('/api/merch/products')
       .then(res => res.json())
       .then(products => {
-        const product = products.find(p => p.id === productId);
+        const product = products.find(p => p.id === productId || String(p.id) === String(productId));
         if (!product) {
           showCustomModal('General Store', '<p>Item details could not be loaded at this moment. Please check back shortly!</p>');
           return;
         }
 
-        const variantOptions = product.variants.map((v, i) => `
-          <option value="${v.id}">${v.title} — $${(v.price / 100).toFixed(2)} USD</option>
+        const availableVariants = (product.variants && product.variants.length > 0)
+          ? product.variants.filter(v => v.is_enabled !== false)
+          : [];
+
+        const variantOptions = availableVariants.map(v => `
+          <option value="${v.id}">${v.title || 'Standard'} — $${(v.price / 100).toFixed(2)} USD</option>
         `).join('');
+
+        const displayImg = product.images && product.images.length > 0
+          ? (typeof product.images[0] === 'string' ? product.images[0] : (product.images[0]?.src || ''))
+          : '';
 
         const modalHtml = `
           <div style="display: flex; flex-direction: column; gap: 1.25rem;">
             <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
-              <img src="${product.images[0]}" alt="${product.title}" style="width: 120px; height: 120px; border-radius: 12px; object-fit: cover; border: 1px solid rgba(245,158,11,0.3);">
+              <img src="${displayImg}" alt="${product.title}" style="width: 120px; height: 120px; border-radius: 12px; object-fit: cover; border: 1px solid rgba(245,158,11,0.3); background: #1a1511;">
               <div style="flex: 1;">
                 <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.35rem;">${product.title}</h4>
-                <p style="font-size: 0.9rem; color: #d1c7bc; line-height: 1.4;">${product.description}</p>
+                <p style="font-size: 0.9rem; color: #d1c7bc; line-height: 1.4;">${product.description || 'Official Wren Montgomery Merchandise'}</p>
               </div>
             </div>
 
@@ -254,7 +262,7 @@
             <div style="margin-top: 0.5rem; display: flex; gap: 1rem;">
               <button id="confirmOrderBtn" class="btn btn-primary" style="flex: 1; padding: 0.95rem;">Proceed to Secure Checkout</button>
             </div>
-            <p style="font-size: 0.8rem; color: #8e8378; text-align: center;">Shipped directly from Nashville with tracking.</p>
+            <p style="font-size: 0.8rem; color: #8e8378; text-align: center;">Hand-printed on demand and shipped with tracking.</p>
           </div>
         `;
 
@@ -280,9 +288,9 @@
                   showCustomModal('Official Store Notice', `
                     <div style="text-align: center; padding: 1rem 0;">
                       <div style="font-size: 2.5rem; margin-bottom: 0.75rem; color: #f59e0b;">★</div>
-                      <h4 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.5rem;">Online Merch Preview</h4>
+                      <h4 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.5rem;">Online Merch Checkout</h4>
                       <p style="color: #d1c7bc; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                        The debut merch line for <em>"${product.title}"</em> is currently being staged for the single drop! Join <strong>The Tailgate Club</strong> below to get first access the second pre-orders open.
+                        ${data.error || 'Checkout is momentarily unavailable. Please check back shortly!'}
                       </p>
                       <button class="btn btn-primary" data-modal-close>Got It, Y'all!</button>
                     </div>
@@ -305,6 +313,20 @@
         showCustomModal('General Store', '<p>Unable to load merchandise at this time.</p>');
       });
   };
+
+  // --- AUTO-SCROLL TO HASH (e.g. /listen -> /#music) ---
+  function handleHashScroll() {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    }
+  }
+  window.addEventListener('load', handleHashScroll);
+  window.addEventListener('hashchange', handleHashScroll);
 
   // --- 6. THE TAILGATE CLUB FAN NEWSLETTER FORM (Strictly compliant: NO alert/confirm) ---
   const newsletterForm = document.getElementById('newsletterForm');
