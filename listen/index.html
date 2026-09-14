@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Wren Montgomery — Stream Debut Album 'Sweet Tea & Gasoline'</title>
+  
+  <meta name="description" content="Stream all 12 tracks from Wren Montgomery's debut album 'Sweet Tea & Gasoline'. Modern country-pop from Leiper's Fork, Tennessee.">
+  <meta property="og:title" content="Wren Montgomery — Sweet Tea & Gasoline (Debut Album)">
+  <meta property="og:description" content="Listen to all 12 songs now. Watch music videos and join the VIP Tailgate Club.">
+  <meta property="og:image" content="/images/wren_portrait_front.jpg">
+  <meta property="og:type" content="music.album">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/images/shot_02_tailgate_lipsync_front.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0a08;
+      --card-bg: rgba(26, 22, 18, 0.75);
+      --card-border: rgba(245, 158, 11, 0.2);
+      --amber: #f59e0b;
+      --amber-light: #fbbf24;
+      --text: #f9fafb;
+      --text-muted: #a8a29e;
+      --radius: 16px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 80% 90%, rgba(180, 83, 9, 0.08) 0%, transparent 50%);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Profile Header */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1rem;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--amber);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+    }
+
+    .verified-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      background: var(--amber);
+      color: #000;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border: 2px solid var(--bg);
+    }
+
+    .artist-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.2rem;
+      color: #fff;
+    }
+
+    .artist-handle {
+      font-size: 0.85rem;
+      color: var(--amber);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .artist-bio {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    /* Album Feature Badge */
+    .album-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(18, 14, 10, 0.94);
+      border: 1.5px solid var(--amber);
+      color: #ffffff;
+      padding: 0.45rem 1.1rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.75rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(245, 158, 11, 0.2);
+    }
+
+    .pulse {
+      width: 7px;
+      height: 7px;
+      background: var(--amber);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--amber);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.5; }
+    }
+
+    /* Embedded Audio Player Box */
+    .player-card {
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .player-now-playing {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .player-thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .player-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .player-track-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .player-track-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .player-track-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Scrubber */
+    .scrubber-wrap {
+      margin-bottom: 0.85rem;
+    }
+
+    .scrubber-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .scrubber-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--amber), var(--amber-light));
+      border-radius: 3px;
+      transition: width 0.1s linear;
+    }
+
+    .time-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    /* Controls Bar */
+    .controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .ctrl-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      opacity: 0.85;
+    }
+
+    .ctrl-btn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+      color: var(--amber);
+    }
+
+    .play-master-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--amber);
+      color: #000;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+      transition: var(--transition);
+    }
+
+    .play-master-btn:hover {
+      transform: scale(1.08);
+      background: var(--amber-light);
+    }
+
+    /* Tracklist Container */
+    .tracklist-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tracklist-scroll {
+      max-height: 250px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding-right: 0.2rem;
+    }
+
+    .tracklist-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .tracklist-scroll::-webkit-scrollbar-thumb {
+      background: rgba(245, 158, 11, 0.3);
+      border-radius: 4px;
+    }
+
+    .track-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.75rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .track-row:hover {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: rgba(245, 158, 11, 0.2);
+    }
+
+    .track-row.active {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--amber);
+    }
+
+    .track-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .track-idx {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 18px;
+    }
+
+    .track-row.active .track-idx {
+      color: var(--amber);
+    }
+
+    .track-title-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .track-row.active .track-title-text {
+      color: var(--amber);
+    }
+
+    .track-dur-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-left: 0.5rem;
+    }
+
+    /* Action Links (Link-in-Bio Buttons) */
+    .links-stack {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.95rem 1.25rem;
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .link-btn:hover {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: var(--amber);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+    }
+
+    .link-btn-featured {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(180, 83, 9, 0.15) 100%);
+      border-color: var(--amber);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .link-icon {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber);
+    }
+
+    .link-arrow {
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .link-btn:hover .link-arrow {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    /* Social Icons Row */
+    .social-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .social-icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icon-btn:hover {
+      background: var(--amber);
+      color: #000;
+      border-color: var(--amber);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Footer */
+    .page-footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .page-footer a {
+      color: var(--amber);
+      text-decoration: none;
+    }
+
+    /* Custom Modal (Lyrics) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #181410;
+      border: 1px solid var(--amber);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 440px;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+      animation: modalIn 0.25s ease-out;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-head {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.4rem;
+      line-height: 1;
+      padding: 0.2rem;
+    }
+
+    .modal-content {
+      padding: 1.25rem;
+      overflow-y: auto;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #d6d3d1;
+      white-space: pre-line;
+      font-family: monospace;
+    }
+
+    .modal-foot {
+      padding: 0.85rem 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <div class="avatar-wrap">
+        <img src="/images/wren_portrait_front.jpg" alt="Wren Montgomery" class="avatar-img">
+        <div class="verified-badge">✓</div>
+      </div>
+      <h1 class="artist-name">Wren Montgomery</h1>
+      <div class="artist-handle">@WrenMontgomeryMusic • Leiper's Fork, TN</div>
+      <p class="artist-bio">
+        Modern country-pop sweetheart with a razor-sharp wit and a girl-next-door smile.
+      </p>
+      <div class="album-badge">
+        <span class="pulse"></span>
+        <span>Debut Album Out Now: Sweet Tea &amp; Gasoline</span>
+      </div>
+    </header>
+
+    <!-- Interactive 12-Track All-Song Mobile Player -->
+    <section class="player-card" aria-label="Album Streamer">
+      <div class="player-now-playing">
+        <img src="/music/01-aint-my-first-rodeo.jpg" alt="Artwork" class="player-thumb" id="thumbImg">
+        <div class="player-meta">
+          <div class="player-track-tag" id="trackTag">Track 1 of 12</div>
+          <div class="player-track-title" id="trackTitle">Ain't My First Rodeo</div>
+          <div class="player-track-sub" id="trackSub">Lead Single • Studio Master</div>
+        </div>
+        <button class="ctrl-btn" id="lyricsBtn" title="View Lyrics" style="padding: 0.4rem;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H7v-2h10v2zm0-3H7V9h10v2zm0-3H7V6h10v2z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Scrubber -->
+      <div class="scrubber-wrap">
+        <div class="scrubber-bar" id="scrubberBar">
+          <div class="scrubber-fill" id="scrubberFill"></div>
+        </div>
+        <div class="time-row">
+          <span id="curTime">0:00</span>
+          <span id="durTime">3:27</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-row">
+        <button class="ctrl-btn" id="prevBtn" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="play-master-btn" id="playBtn" aria-label="Play or Pause">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="ctrl-btn" id="nextBtn" aria-label="Next track">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Tracklist -->
+      <div class="tracklist-header">
+        <span>Complete 12-Track Album</span>
+        <span>Tap to Play</span>
+      </div>
+      <div class="tracklist-scroll" id="tracklistScroll">
+        <!-- Dynamically rendered -->
+      </div>
+
+      <!-- Hidden Audio Element -->
+      <audio id="audioEl" preload="metadata"></audio>
+    </section>
+
+    <!-- Bio Links Stack -->
+    <section class="links-stack" aria-label="Quick Links">
+      <a href="/" class="link-btn link-btn-featured">
+        <div class="link-left">
+          <span class="link-icon">🌐</span>
+          <span>Visit Official Website (Full Experience)</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="/#videos" class="link-btn">
+        <div class="link-left">
+          <span class="link-icon">🎬</span>
+          <span>Watch Official Music Videos</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="/#merch" class="link-btn">
+        <div class="link-left">
+          <span class="link-icon">👕</span>
+          <span>Official Merch: Washed Tees &amp; Camp Hoodies</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="/#join" class="link-btn">
+        <div class="link-left">
+          <span class="link-icon">🎟️</span>
+          <span>Join The Tailgate Club (VIP Unreleased)</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+    </section>
+
+    <!-- Social Media Icons Row -->
+    <div class="social-row">
+      <a href="https://www.instagram.com/wrenmontgomerymusic/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/wrenmontgomerymusic/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@wrenmontgomery" target="_blank" rel="noopener" class="social-icon-btn" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.81 4.47 6.27 6.27 0 0 0 1.88-4.47V8.52a8.27 8.27 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-.87-.05z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@WrenMontgomeryMusic" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+
+    <footer class="page-footer">
+      <div>© 2026 Wren Montgomery. Leiper's Fork, TN.</div>
+      <div><a href="/">wrenmontgomery.com</a></div>
+    </footer>
+  </div>
+
+  <!-- Lyrics Modal (Rule-compliant custom modal) -->
+  <div class="modal-backdrop" id="lyricsModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title" id="lyricsModalTitle">Track Lyrics</div>
+        <button class="modal-close" id="closeLyricsBtn">&times;</button>
+      </div>
+      <div class="modal-content" id="lyricsModalContent"></div>
+      <div class="modal-foot">
+        <button class="btn-secondary" id="closeLyricsBtn2">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/player.js"></script>
+  <script>
+    (function () {
+      // Connect to window.wrenPlayer initialized by player.js
+      const audio = document.getElementById('audioEl');
+      const thumbImg = document.getElementById('thumbImg');
+      const trackTitle = document.getElementById('trackTitle');
+      const trackSub = document.getElementById('trackSub');
+      const trackTag = document.getElementById('trackTag');
+      const playBtn = document.getElementById('playBtn');
+      const playIcon = document.getElementById('playIcon');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const scrubberBar = document.getElementById('scrubberBar');
+      const scrubberFill = document.getElementById('scrubberFill');
+      const curTimeEl = document.getElementById('curTime');
+      const durTimeEl = document.getElementById('durTime');
+      const tracklistScroll = document.getElementById('tracklistScroll');
+      const lyricsBtn = document.getElementById('lyricsBtn');
+      const lyricsModal = document.getElementById('lyricsModal');
+      const lyricsModalTitle = document.getElementById('lyricsModalTitle');
+      const lyricsModalContent = document.getElementById('lyricsModalContent');
+      const closeLyricsBtn = document.getElementById('closeLyricsBtn');
+      const closeLyricsBtn2 = document.getElementById('closeLyricsBtn2');
+
+      const tracks = (window.wrenPlayer && window.wrenPlayer.tracks) ? window.wrenPlayer.tracks : [];
+      let currentIdx = 0;
+      let isPlaying = false;
+
+      function renderTracks() {
+        tracklistScroll.innerHTML = '';
+        tracks.forEach((t, i) => {
+          const row = document.createElement('div');
+          row.className = `track-row ${i === currentIdx ? 'active' : ''}`;
+          row.innerHTML = `
+            <div class="track-left">
+              <span class="track-idx">${i + 1}</span>
+              <span class="track-title-text">${t.title}</span>
+            </div>
+            <span class="track-dur-text">${t.duration}</span>
+          `;
+          row.addEventListener('click', () => {
+            loadAndPlay(i);
+          });
+          tracklistScroll.appendChild(row);
+        });
+      }
+
+      function loadTrack(i) {
+        if (i < 0 || i >= tracks.length) return;
+        currentIdx = i;
+        const t = tracks[currentIdx];
+        audio.src = '/' + t.src;
+        thumbImg.src = '/' + t.artwork;
+        trackTitle.textContent = t.title;
+        trackSub.textContent = t.subtitle;
+        trackTag.textContent = `Track ${i + 1} of ${tracks.length}`;
+        durTimeEl.textContent = t.duration;
+        renderTracks();
+      }
+
+      function loadAndPlay(i) {
+        loadTrack(i);
+        play();
+      }
+
+      function play() {
+        audio.play().then(() => {
+          isPlaying = true;
+          updatePlayIcon(true);
+        }).catch(err => console.warn(err));
+      }
+
+      function pause() {
+        audio.pause();
+        isPlaying = false;
+        updatePlayIcon(false);
+      }
+
+      function togglePlay() {
+        if (isPlaying) pause();
+        else play();
+      }
+
+      function updatePlayIcon(playing) {
+        playIcon.innerHTML = playing 
+          ? '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'
+          : '<path d="M8 5v14l11-7z"/>';
+      }
+
+      function formatTime(secs) {
+        if (isNaN(secs)) return '0:00';
+        const m = Math.floor(secs / 60);
+        const s = Math.floor(secs % 60);
+        return `${m}:${s < 10 ? '0' : ''}${s}`;
+      }
+
+      playBtn.addEventListener('click', togglePlay);
+      prevBtn.addEventListener('click', () => {
+        let n = currentIdx - 1;
+        if (n < 0) n = tracks.length - 1;
+        loadAndPlay(n);
+      });
+      nextBtn.addEventListener('click', () => {
+        let n = currentIdx + 1;
+        if (n >= tracks.length) n = 0;
+        loadAndPlay(n);
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+          const pct = (audio.currentTime / audio.duration) * 100;
+          scrubberFill.style.width = pct + '%';
+          curTimeEl.textContent = formatTime(audio.currentTime);
+        }
+      });
+
+      audio.addEventListener('ended', () => {
+        let n = currentIdx + 1;
+        if (n >= tracks.length) n = 0;
+        loadAndPlay(n);
+      });
+
+      scrubberBar.addEventListener('click', (e) => {
+        const rect = scrubberBar.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        if (audio.duration) {
+          audio.currentTime = pos * audio.duration;
+        }
+      });
+
+      // Lyrics Modal
+      lyricsBtn.addEventListener('click', () => {
+        const t = tracks[currentIdx];
+        lyricsModalTitle.textContent = `${t.title} — Lyrics`;
+        lyricsModalContent.textContent = t.lyrics || 'Lyrics coming soon.';
+        lyricsModal.classList.add('active');
+      });
+
+      [closeLyricsBtn, closeLyricsBtn2].forEach(btn => {
+        btn.addEventListener('click', () => {
+          lyricsModal.classList.remove('active');
+        });
+      });
+
+      lyricsModal.addEventListener('click', (e) => {
+        if (e.target === lyricsModal) lyricsModal.classList.remove('active');
+      });
+
+      // Initial load
+      loadTrack(0);
+    })();
+  </script>
+</body>
+</html>
