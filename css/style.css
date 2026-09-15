@@ -175,6 +175,36 @@ img {
   font-size: 1.05rem;
 }
 
+.btn-spotify {
+  background: #1db954;
+  color: #0b0f0c;
+  border: 1px solid #1ed760;
+  box-shadow: 0 6px 20px -2px rgba(29, 185, 84, 0.4);
+  font-weight: 700;
+}
+
+.btn-spotify:hover {
+  background: #1ed760;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -2px rgba(29, 185, 84, 0.55);
+}
+
+.btn-spotify-subtle {
+  background: rgba(29, 185, 84, 0.12);
+  color: #1ed760;
+  border: 1px solid rgba(29, 185, 84, 0.35);
+  font-weight: 600;
+}
+
+.btn-spotify-subtle:hover {
+  background: rgba(29, 185, 84, 0.22);
+  border-color: #1ed760;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.25);
+}
+
 /* ==========================================================================
    Navigation Bar
    ========================================================================== */
@@ -289,10 +319,11 @@ img {
 .hero-section {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 0 5rem;
+  padding: 8.5rem 0 5.5rem;
   overflow: hidden;
 }
 
@@ -300,6 +331,23 @@ img {
   position: absolute;
   inset: 0;
   z-index: 1;
+  overflow: hidden;
+}
+
+.hero-video-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1.05);
+  object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.48) contrast(1.18) saturate(1.12);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-bg-img {
@@ -313,8 +361,17 @@ img {
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(14, 12, 10, 0.3) 0%, rgba(14, 12, 10, 0.88) 80%, #0e0c0a 100%),
-              linear-gradient(to bottom, rgba(14, 12, 10, 0.5) 0%, transparent 40%, rgba(14, 12, 10, 0.95) 90%, #0e0c0a 100%);
+  z-index: 2;
+  background: radial-gradient(circle at center, rgba(14, 12, 10, 0.25) 0%, rgba(14, 12, 10, 0.78) 75%, #0e0c0a 100%),
+              linear-gradient(to bottom, rgba(14, 12, 10, 0.65) 0%, transparent 35%, rgba(14, 12, 10, 0.88) 80%, #0e0c0a 100%);
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
 }
 
 .hero-sunburst {
@@ -327,20 +384,21 @@ img {
   background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(217, 119, 6, 0.08) 45%, transparent 70%);
   pointer-events: none;
   filter: blur(40px);
+  z-index: 2;
 }
 
 #fireflyCanvas {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   text-align: center;
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -397,10 +455,21 @@ img {
   margin-bottom: 0.4rem;
 }
 
+.hero-title .hero-kicker {
+  display: block;
+  font-size: 0.28em;
+  letter-spacing: 0.24em;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  margin-top: 0.6rem;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
 .hero-subtitle {
   font-size: clamp(1.1rem, 2.2vw, 1.35rem);
   color: var(--text-secondary);
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto 2.5rem;
   font-weight: 400;
   line-height: 1.6;
@@ -412,6 +481,129 @@ img {
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
+}
+
+/* YouTube Button Style */
+.btn-youtube {
+  background: #cc0000;
+  color: #ffffff !important;
+  border: 1.5px solid #ff2a2a;
+  box-shadow: 0 6px 25px rgba(204, 0, 0, 0.4), 0 0 15px rgba(255, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-youtube:hover {
+  background: #e60000;
+  border-color: #ff5555;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.65);
+  transform: translateY(-2px);
+  color: #fff !important;
+}
+
+/* Video Player Modal (HTML5 Dialog & Accessible Overlay) */
+dialog.video-player-modal {
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: min(92vw, 1000px);
+  max-height: 92vh;
+  margin: auto;
+  border-radius: 16px;
+  overflow: visible;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95), 0 0 50px rgba(245, 158, 11, 0.25);
+}
+
+dialog.video-player-modal::backdrop {
+  background: rgba(8, 6, 5, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.video-modal-inner {
+  position: relative;
+  background: #14100d;
+  border: 1.5px solid var(--border-active);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.6rem;
+  background: rgba(22, 17, 13, 0.96);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.video-modal-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--amber-gold);
+  display: block;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.video-modal-title-wrap h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.video-modal-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-modal-viewport iframe,
+.video-modal-viewport video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.1rem 1.6rem;
+  background: rgba(18, 14, 11, 0.96);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.video-modal-desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-style: italic;
+  max-width: 580px;
+  line-height: 1.5;
+}
+
+.video-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+  border-radius: var(--radius-pill);
 }
 
 /* ==========================================================================

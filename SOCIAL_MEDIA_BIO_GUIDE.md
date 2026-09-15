@@ -54,6 +54,7 @@ Debut Album OUT NOW! 💿
 #### 3. Instagram Links Field
 * **URL:** `https://wrenmontgomery.com/listen`
 * **Link Title:** `Stream Debut Album (12 Songs) 💿`
+* **Spotify Direct Album URL:** `https://open.spotify.com/album/67HRcTiNwxEqzorBrVU6V8`
 
 #### 4. Story Highlights Setup (Cover Icons)
 * **💿 The Album:** Clip previews and song-by-song breakdown stories of all 12 tracks.

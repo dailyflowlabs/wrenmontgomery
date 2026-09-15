@@ -1,6 +1,9 @@
 .DS_Store
 scratch/
-videos/
+videos/*
+!videos/wren_sweet_tea_hero_bg.mp4
+!videos/thumbnails/
+!videos/thumbnails/*
 node_modules/
 .env
 .env.*

@@ -100,6 +100,112 @@
     });
   }
 
+  // --- 2.5 VIDEO MODAL CONTROLLER (Rule Compliant HTML5 Dialog, Light-Dismiss & YouTube Embed) ---
+  const videoModal = document.getElementById('videoModal');
+  const videoModalContainer = document.getElementById('modalVideoContainer');
+  const videoModalTitle = document.getElementById('modalVideoTitle');
+  const videoModalDesc = document.getElementById('modalVideoDesc');
+  const videoModalCloseBtn = document.getElementById('videoModalCloseBtn');
+  const videoModalCloseFooterBtn = document.getElementById('videoModalCloseFooterBtn');
+
+  function openVideoModal(videoSrc, title, desc) {
+    if (!videoModal || !videoModalContainer) return;
+
+    // Pause vinyl turntable player if active to prevent audio overlap
+    if (window.wrenPlayer && typeof window.wrenPlayer.pauseTrack === 'function') {
+      window.wrenPlayer.pauseTrack();
+    }
+
+    if (videoModalTitle) videoModalTitle.textContent = title || 'Wren Montgomery — Sweet Tea & Gasoline';
+    if (videoModalDesc) videoModalDesc.textContent = desc || 'Official Music Video • 4K Master';
+
+    // Parse YouTube video ID if YouTube link
+    const isYouTube = videoSrc.includes('youtube.com') || videoSrc.includes('youtu.be');
+    if (isYouTube) {
+      let videoId = '';
+      if (videoSrc.includes('youtu.be/')) {
+        videoId = videoSrc.split('youtu.be/')[1].split('?')[0].split('/')[0];
+      } else if (videoSrc.includes('/embed/')) {
+        videoId = videoSrc.split('/embed/')[1].split('?')[0].split('/')[0];
+      } else if (videoSrc.includes('watch?v=') || videoSrc.includes('v=')) {
+        const urlParams = new URLSearchParams(videoSrc.split('?')[1]);
+        videoId = urlParams.get('v');
+      }
+      if (!videoId) videoId = 'otcYz3sZsHg';
+
+      videoModalContainer.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1" 
+          title="${title || 'Wren Montgomery Video Player'}" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      `;
+    } else {
+      videoModalContainer.innerHTML = `
+        <video controls autoplay playsinline style="width:100%; height:100%; object-fit:contain;">
+          <source src="${videoSrc}" type="video/mp4">
+        </video>
+      `;
+    }
+
+    videoModal.showModal();
+  }
+
+  function closeVideoModal() {
+    if (!videoModal) return;
+    if (videoModalContainer) {
+      videoModalContainer.innerHTML = '';
+    }
+    videoModal.close();
+  }
+
+  if (videoModalCloseBtn) {
+    videoModalCloseBtn.addEventListener('click', closeVideoModal);
+  }
+  if (videoModalCloseFooterBtn) {
+    videoModalCloseFooterBtn.addEventListener('click', closeVideoModal);
+  }
+
+  if (videoModal) {
+    // Backdrop click dismiss for HTML5 dialog
+    videoModal.addEventListener('click', (e) => {
+      const rect = videoModal.getBoundingClientRect();
+      const clickedInside = (
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width
+      );
+      if (!clickedInside || e.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+
+    // Close on cancel (ESC key)
+    videoModal.addEventListener('cancel', (e) => {
+      e.preventDefault();
+      closeVideoModal();
+    });
+  }
+
+  // Setup click triggers on all elements with data-video-src or #openVideoModalBtn
+  document.querySelectorAll('[data-video-src]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = el.getAttribute('data-video-src');
+      const title = el.getAttribute('data-video-title');
+      const desc = el.getAttribute('data-video-desc');
+      openVideoModal(src, title, desc);
+    });
+  });
+
+  window.WrenVideoModal = {
+    open: openVideoModal,
+    close: closeVideoModal
+  };
+
   // --- 3. VISUAL ARCHIVES CAROUSEL ---
   const track = document.getElementById('carouselTrack');
   const prevBtn = document.getElementById('carouselPrev');
@@ -314,8 +420,19 @@
       });
   };
 
-  // --- AUTO-SCROLL TO HASH (e.g. /listen -> /#music) ---
+  // --- AUTO-SCROLL TO HASH (e.g. /listen -> /#music or /#video) ---
   function handleHashScroll() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('video') === '1' || window.location.hash === '#video') {
+      const btn = document.getElementById('openVideoModalBtn');
+      if (btn) {
+        setTimeout(() => {
+          btn.click();
+        }, 200);
+        return;
+      }
+    }
+
     if (window.location.hash) {
       const target = document.querySelector(window.location.hash);
       if (target) {
